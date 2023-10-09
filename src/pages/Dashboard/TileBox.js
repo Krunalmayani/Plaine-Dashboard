@@ -18,6 +18,15 @@ function TileBox(props) {
                     <Col xl={3} ms={6} key={key}>
                         <Card className={"card-height-100 " + item.class}>
                             <CardBody>
+                                <UncontrolledDropdown className="float-end">
+                                    <DropdownToggle tag="a" className="text-reset dropdown-btn" href="#">
+                                        <span className="text-muted fs-18"><i className="mdi mdi-dots-vertical"></i></span>
+                                    </DropdownToggle>
+                                    <DropdownMenu className="dropdown-menu-end">
+                                        <DropdownItem>Favorite</DropdownItem>
+                                        <DropdownItem>Apply Now</DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown>
                                 <div className="mb-4 pb-2">
                                     <img src={item.img} alt="" className="avatar-sm" />
                                 </div>

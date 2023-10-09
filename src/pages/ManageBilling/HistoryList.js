@@ -291,7 +291,7 @@ function HistoryList(props) {
                   {isInvoiceSuccess && invoices.length ? (
                     <TableContainer
                       columns={columns}
-                      data={(invoiceTable || [])}
+                      data={(invoiceTable || [])} 
                       isGlobalFilter={true}
                       isAddUserList={false}
                       customPageSize={10}

@@ -118,6 +118,7 @@ const authProtectedRoutes = [
   { path: "/notebook-overview", component: <NotebookOverview /> },
   { path: "/project-overview", component: <MainProjectOverview /> },
 
+ 
   //Supports Tickets
   { path: "/apps-tickets-details", component: <TicketsDetails /> },
   { path: "/apps-supoort-ticket", component: <ListSupportTicket /> },
