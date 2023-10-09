@@ -308,30 +308,34 @@ const tileBoxes5 = [
     {
         id: 1,
         img: image3,
-        title: "Marketing Director",
+        title: "Jupyter Notebook ",
         class : "",
-        year: "(2-4 Yrs Exp.)"
+        year: "(2-4 Yrs Exp.)",
+        subtitle:'Notebook'
     },
     {
         id: 2,
         img: image4,
         class : "",
-        title: "Sr. Web Designer",
-        year: "(2+ Yrs Exp.)"
+        title: "Google Colab",
+        year: "(2+ Yrs Exp.)",
+        subtitle:'AI Model'
     },
     {
         id: 3,
         img: image6,
         class : "bg-soft-primary shadow-none bg-opacity-10",
-        title: "Marketing Director",
-        year: "(2+ Yrs Exp.)"
+        title: "jupyterLab",
+        year: "(2+ Yrs Exp.)",
+        subtitle:'Custom App'
     },
     {
         id: 4,
         img: image8,
         class : "bg-soft-info shadow-none bg-opacity-10",
-        title: "Sr. Web Designer",
-        year: "(2+ Yrs Exp.)"
+        title: "Deernote",
+        year: "(2+ Yrs Exp.)",
+        subtitle:'AI Model '
     },
 ];
 

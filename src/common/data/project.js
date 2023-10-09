@@ -36,7 +36,7 @@ const project4 = [
         isDesign1: true,
         img: avatar11,
         imgbgColor: "warning",
-        label: "Jupyter Notebook",
+        label: "My Personal Notebook",
         caption: "The most popular open-source notebook for data science and machine learning.You can set up Jupyter Notebook on an AWS EC2 instance.",
         number: "18/42",
         progressBar: "34%",

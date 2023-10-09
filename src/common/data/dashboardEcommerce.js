@@ -21,29 +21,30 @@ const ecomWidgets = [
     {
         id: 1,
         cardColor: "primary",
-        label: "Total Earnings",
+        label: "My Team ",
         badge: "ri-arrow-right-up-line",
         badgeClass: "white",
         percentage: "+16.24",
-        counter: "559.25",
-        link: "View net earnings",
+        counter: "559525",
+        link: "View All Members",
         bgcolor: "light",
-        icon: "bx bx-dollar-circle",
-        decimals: 2,
-        prefix: "$",
-        suffix: "k"
+        separator: ",",
+        icon: "fa-solid fa-people-group",
+        decimals: 0,
+       
+     
     },
     {
         id: 2,
         cardColor: "secondary",
-        label: "Orders",
+        label: "My Projects ",
         badge: "ri-arrow-right-down-line",
         badgeClass: "white",
         percentage: "-3.57",
         counter: "36894",
-        link: "View all orders",
+        link: "View All Running App",
         bgcolor: "info",
-        icon: "bx bx-shopping-bag",
+        icon: "ri-projector-line",
         decimals: 0,
         prefix: "",
         separator: ",",
@@ -52,34 +53,34 @@ const ecomWidgets = [
     {
         id: 3,
         cardColor: "success",
-        label: "Customers",
+        label: "Available Custom App",
         badge: "ri-arrow-right-up-line",
         badgeClass: "white",
         percentage: "+29.08",
-        counter: "183.35",
-        link: "See details",
+        counter: "183535",
+        link: "View Available App",
         bgcolor: "warning",
-        icon: "bx bx-user-circle",
-        decimals: 2,
-        prefix: "",
-        suffix: "M"
+        icon: "fa-solid fa-table-list",
+        decimals: 0,
+        separator: ",",
+      
+        
     },
     {
         id: 4,
         cardColor: "info",
-        label: "My Balance",
+        label: "AI/ML Models",
         badgeClass: "white",
         percentage: "+0.00",
-        counter: "165.89",
-        link: "Withdraw money",
+        counter: "165589",
+        link: "View All Model",
         bgcolor: "primary",
-        icon: "bx bx-wallet",
-        decimals: 2,
-        prefix: "$",
-        suffix: "k"
+        icon: "fa-solid fa-robot",
+        decimals: 0,
+        separator: ",",
+       
     },
 ];
-
 const bestSellingProducts = [
     {
         id: 1,

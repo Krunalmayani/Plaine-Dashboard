@@ -157,6 +157,19 @@ const EcommerceCheckout = () => {
                     <TabContent activeTab={activeTab}>
                       <TabPane tabId={1} id="pills-bill-info">
                         <div>
+                          <div className="mb-3">
+                            <h4 className="mb-1">Project Name</h4>
+                            <p className="text-muted mb-10">
+                              User-friendly project name such as my personal notebook
+                            </p>
+                            <Input
+                              type="text"
+                              className="form-control"
+                              id="cc-name"
+                              placeholder="Enter name"
+                              style={{width:"50%"}}
+                            />
+                          </div>
                           <Row>
                             <Label htmlFor="country" className="form-label">
                               <h6 className="mb-1">Region</h6>
@@ -644,9 +657,8 @@ const EcommerceCheckout = () => {
                 <CardHeader>
                   <div className="d-flex">
                     <h5 className="card-title flex-grow-1 mb-0">
-                      Customer Details
+                      Customer Support
                     </h5>
-
                   </div>
                 </CardHeader>
                 <CardBody>
@@ -671,7 +683,7 @@ const EcommerceCheckout = () => {
                     </li>
                     <li>
                       <i className="ri-phone-line me-2 align-middle text-muted fs-16"></i>
-                      +(256) 245451 441
+                      (+1) 937 553 3282
                     </li>
                   </ul>
                 </CardBody>

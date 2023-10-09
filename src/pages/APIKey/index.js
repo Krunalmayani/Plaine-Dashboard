@@ -20,10 +20,9 @@ import {
 } from "reactstrap";
 import DeleteModal from "../../Components/Common/DeleteModal";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
-import Widgets from "./Widgets";
 import TableContainer from "../../Components/Common/TableContainer";
 import { APIKeys, CreatedBy, ExpiryDate, Name, Status } from "./APIKeyCol";
-import { CreateDate } from "../SupportTickets/ListView/TicketCol";
+import { CreateDate } from "../HelpSupportTickets/ListSupportTicekts/TicketCol";
 import { useDispatch, useSelector } from "react-redux";
 import { getAPIKey } from "../../slices/thunks";
 
@@ -229,15 +228,15 @@ const APIKey = () => {
         <Container fluid>
           <BreadCrumb title="API Key" pageTitle="Apps" />
 
-          <Row>
+          {/* <Row>
             <Widgets />
-          </Row>
+          </Row> */}
 
           <Row>
             <Col lg={12}>
               <Card id="apiKeyList">
                 <CardHeader className="d-flex align-items-center">
-                  <h5 className="card-title flex-grow-1 mb-0">API Keys</h5>
+                  {/* <h5 className="card-title flex-grow-1 mb-0">API Keys</h5> */}
                   <div className="d-flex gap-1 flex-wrap">
                     <Button
                       type="button"

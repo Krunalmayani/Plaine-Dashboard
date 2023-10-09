@@ -6,19 +6,19 @@ import classnames from "classnames";
 import faqImg from "../../../assets/images/faq-img.png";
 
 const Faqs = () => {
-    document.title="FAQs | Velzon - React Admin & Dashboard Template";
+    document.title = "AI/ML Solutions | Plaine - Unleashing Innovation with Artificial Intelligence";
 
-    const [col1, setcol1] = useState(true);
+    const [col1, setcol1] = useState(false);
     const [col2, setcol2] = useState(false);
     const [col3, setcol3] = useState(false);
     const [col4, setcol4] = useState(false);
 
     const [col5, setcol5] = useState(false);
-    const [col6, setcol6] = useState(true);
+    const [col6, setcol6] = useState(false);
     const [col7, setcol7] = useState(false);
     const [col8, setcol8] = useState(false);
 
-    const [col9, setcol9] = useState(true);
+    const [col9, setcol9] = useState(false);
     const [col10, setcol10] = useState(false);
     const [col11, setcol11] = useState(false);
     const [col12, setcol12] = useState(false);
@@ -118,7 +118,7 @@ const Faqs = () => {
     };
     return (
         <React.Fragment>
-            <div className="page-content">               
+            <div className="page-content">
                 <Container fluid>
                     <Row>
                         <Col lg={12}>
@@ -131,7 +131,6 @@ const Faqs = () => {
                                                 <p className="text-success fs-16 mt-3">If you can not find answer to your question in our FAQ, you can always contact us or email us. We will answer you shortly!</p>
                                                 <div className="hstack flex-wrap gap-2">
                                                     <button type="button" className="btn btn-primary btn-label rounded-pill"><i className="ri-mail-line label-icon align-middle rounded-pill fs-16 me-2"></i> Email Us</button>
-                                                    <button type="button" className="btn btn-info btn-label rounded-pill"><i className="ri-twitter-line label-icon align-middle rounded-pill fs-16 me-2"></i> Send Us Tweet</button>
                                                 </div>
                                             </div>
                                         </Col>
@@ -144,16 +143,18 @@ const Faqs = () => {
                                 </div>
                             </Card>
                             <Row className="justify-content-evenly">
+                                <div className="d-flex align-items-center mb-2  ">
+
+                                    <div className="flex-grow-1 d-flex justify-content-center">
+                                        <div className="flex-shrink-0 me-1">
+                                            <i className="ri-question-line fs-24 align-bottom text-success me-1"></i>
+                                        </div>
+                                        <h5 className="fs-17 mb-0 fw-bold align-items-center mt-2">General Questions</h5>
+                                    </div>
+                                </div>
                                 <Col lg={4}>
                                     <div className="mt-3">
-                                        <div className="d-flex align-items-center mb-2">
-                                            <div className="flex-shrink-0 me-1">
-                                                <i className="ri-question-line fs-24 align-bottom text-success me-1"></i>
-                                            </div>
-                                            <div className="flex-grow-1">
-                                                <h5 className="fs-17 mb-0 fw-bold">General Questions</h5>
-                                            </div>
-                                        </div>
+
 
                                         <div className="accordion accordion-border-box" id="genques-accordion">
                                             <div className="accordion-item">
@@ -168,12 +169,16 @@ const Faqs = () => {
                                                         onClick={t_col1}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        What is Lorem Ipsum ?
+                                                        What is Plaine?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col1} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple their most common words.
+                                                        Plaine is a cutting-edge AI/ML platform designed to
+                                                        simplify AI adoption for individuals and businesses. We provide access
+                                                        to a wide range of AI models, deployment options, and tools to
+                                                        streamline the process of selecting, deploying, and managing AI/ML
+                                                        solutions.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -189,12 +194,15 @@ const Faqs = () => {
                                                         onClick={t_col2}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Why do we use it ?
+                                                        How can I get started with Plaine?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col2} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                                                        Getting started is easy! Simply create an account on our platform, log
+                                                        in, and explore our catalog of AI models. You can find detailed
+                                                        information about each model and start deploying them for your specific
+                                                        use cases.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -210,12 +218,15 @@ const Faqs = () => {
                                                         onClick={t_col3}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Where does it come from ?
+                                                        What types of AI models are available on your platform?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col3} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        he wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.
+                                                        We offer a diverse selection of AI models, including Large Foundation
+                                                        Models (LFMs), Large Language Models (LLMs), Domain Specific Models, and
+                                                        more. These models can be used for various applications, from content
+                                                        generation to image recognition and beyond.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -231,12 +242,14 @@ const Faqs = () => {
                                                         onClick={t_col4}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Where can I get some ?
+                                                        Can I use your platform for business applications?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col4} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis aliquam ultrices mauris.
+                                                        Absolutely! Our platform is designed to serve both individual users and
+                                                        businesses of all sizes. We offer solutions tailored to enterprise
+                                                        needs, including data security, scalability, and cost management.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -246,14 +259,7 @@ const Faqs = () => {
 
                                 <Col lg={4}>
                                     <div className="mt-3">
-                                        <div className="d-flex align-items-center mb-2">
-                                            <div className="flex-shrink-0 me-1">
-                                                <i className="ri-user-settings-line fs-24 align-bottom text-success me-1"></i>
-                                            </div>
-                                            <div className="flex-grow-1">
-                                                <h5 className="fs-17 mb-0 fw-bold">Manage Account</h5>
-                                            </div>
-                                        </div>
+
 
                                         <div className="accordion accordion-border-box" id="manageaccount-accordion">
                                             <div className="accordion-item">
@@ -268,12 +274,15 @@ const Faqs = () => {
                                                         onClick={t_col5}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Where can I get some ?
+                                                        How do I deploy AI models from your platform?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col5} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple their most common words.
+                                                        You can deploy AI models from our platform with just a few clicks.
+                                                        Simply select the desired model, configure deployment options, and
+                                                        follow the guided deployment process. Our user-friendly interface makes
+                                                        it straightforward.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -289,12 +298,15 @@ const Faqs = () => {
                                                         onClick={t_col6}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Where does it come from ?
+                                                        Can I integrate your AI models into my existing software or
+                                                        applications?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col6} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                                                        Yes, you can integrate our AI models into your existing software or
+                                                        applications. We provide API documentation and support to help you
+                                                        seamlessly integrate AI capabilities into your projects.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -310,73 +322,28 @@ const Faqs = () => {
                                                         onClick={t_col7}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Why do we use it ?
+                                                        How is the cost calculated for using your platform?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col7} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        he wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.
+                                                        The cost of using our platform depends on factors such as the selected
+                                                        AI model, deployment method, and usage. We offer cost estimation tools
+                                                        and guidance to help you manage expenses effectively.
                                                     </div>
                                                 </Collapse>
                                             </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header" id="manageaccount-headingFour">
-                                                    <button
-                                                        className={classnames(
-                                                            "accordion-button",
-                                                            "fw-medium",
-                                                            { collapsed: !col8 }
-                                                        )}
-                                                        type="button"
-                                                        onClick={t_col8}
-                                                        style={{ cursor: "pointer" }}
-                                                    >
-                                                        What is Lorem Ipsum ?
-                                                    </button>
-                                                </h2>
-                                                <Collapse isOpen={col8} className="accordion-collapse">
-                                                    <div className="accordion-body">
-                                                        Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis aliquam ultrices mauris.
-                                                    </div>
-                                                </Collapse>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </Col>
 
                                 <Col lg={4}>
                                     <div className="mt-3">
-                                        <div className="d-flex align-items-center mb-2">
-                                            <div className="flex-shrink-0 me-1">
-                                                <i className="ri-shield-keyhole-line fs-24 align-bottom text-success me-1"></i>
-                                            </div>
-                                            <div className="flex-grow-1">
-                                                <h5 className="fs-17 mb-0 fw-bold">Privacy &amp; Security</h5>
-                                            </div>
-                                        </div>
+
 
                                         <div className="accordion accordion-border-box" id="privacy-accordion">
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header" id="privacy-headingOne">
-                                                    <button
-                                                        className={classnames(
-                                                            "accordion-button",
-                                                            "fw-medium",
-                                                            { collapsed: !col9 }
-                                                        )}
-                                                        type="button"
-                                                        onClick={t_col9}
-                                                        style={{ cursor: "pointer" }}
-                                                    >
-                                                        Why do we use it ?
-                                                    </button>
-                                                </h2>
-                                                <Collapse isOpen={col9} className="accordion-collapse">
-                                                    <div className="accordion-body">
-                                                        If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple their most common words.
-                                                    </div>
-                                                </Collapse>
-                                            </div>
+
                                             <div className="accordion-item">
                                                 <h2 className="accordion-header" id="privacy-headingTwo">
                                                     <button
@@ -389,12 +356,14 @@ const Faqs = () => {
                                                         onClick={t_col10}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Where can I get some ?
+                                                        Is my data secure when using your platform?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col10} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                                                        Data security is a top priority for us. We implement robust security
+                                                        measures to protect user data and ensure compliance with data privacy
+                                                        regulations. Your proprietary data sets are safe with us.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -410,12 +379,14 @@ const Faqs = () => {
                                                         onClick={t_col11}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        What is Lorem Ipsum ?
+                                                        What kind of support do you provide to users?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col11} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        he wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.
+                                                        We offer comprehensive support to our users, including documentation,
+                                                        tutorials, and FAQs. Additionally, our support team is available to
+                                                        assist with any inquiries or issues you may encounter.
                                                     </div>
                                                 </Collapse>
                                             </div>
@@ -431,12 +402,14 @@ const Faqs = () => {
                                                         onClick={t_col12}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        Where does it come from ?
+                                                        How can I provide feedback or request new features for your platform?
                                                     </button>
                                                 </h2>
                                                 <Collapse isOpen={col12} className="accordion-collapse">
                                                     <div className="accordion-body">
-                                                        Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis aliquam ultrices mauris.
+                                                        We value user feedback and encourage you to share your suggestions and
+                                                        feature requests with us. You can use our feedback system to submit your
+                                                        ideas, and we'll consider them for future platform enhancements.
                                                     </div>
                                                 </Collapse>
                                             </div>

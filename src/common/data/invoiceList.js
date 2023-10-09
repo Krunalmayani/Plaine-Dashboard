@@ -70,9 +70,9 @@ const invoiceTable = [
     {
         id: 1,
         invoiceId: "#VL25000351",
-        img: avatar2,
+
         name: "Diana Kohler",
-        email: "dianakohler@velzon.com",
+        email: "dianakohler@google.com",
         country: "Brazil",
         date: "06 Apr, 2021",
         time: "09:58PM",
@@ -83,9 +83,9 @@ const invoiceTable = [
     {
         id: 2,
         invoiceId: "#VL25000352",
-        img: avatar3,
+
         name: "James Morris",
-        email: "jamesmorris@velzon.com",
+        email: "jamesmorris@google.com",
         country: "Germany",
         date: "17 Dec, 2021",
         time: "1:24AM",
@@ -96,9 +96,9 @@ const invoiceTable = [
     {
         id: 3,
         invoiceId: "#VL25000353",
-        img: avatar4,
+
         name: "Dawn Koh",
-        email: "dawnkoh@velzon.com",
+        email: "dawnkoh@google.com",
         country: "United Kingdom",
         date: "29 Nov, 2021",
         time: "7:20PM",
@@ -109,9 +109,8 @@ const invoiceTable = [
     {
         id: 4,
         invoiceId: "#VL25000354",
-        img: avatar5,
         name: "Tonya Noble",
-        email: "tonynoble@velzon.com",
+        email: "tonynoble@google.com",
         country: "Spain",
         date: "22 Nov, 2021",
         time: "10:20PM",
@@ -122,9 +121,9 @@ const invoiceTable = [
     {
         id: 5,
         invoiceId: "#VL25000355",
-        img: avatar6,
+
         name: "David Nichols",
-        email: "davidnochols@velzon.com",
+        email: "davidnochols@google.com",
         country: "United States of America",
         date: "11 Nov, 2021",
         time: "12:37AM",
@@ -135,9 +134,9 @@ const invoiceTable = [
     {
         id: 6,
         invoiceId: "#VL25000356",
-        img: avatar7,
+
         name: "Joseph Payten",
-        email: "josephpayten@velzon.com",
+        email: "josephpayten@google.com",
         country: "France",
         date: "03 Nov, 2021",
         time: "12:29AM",
@@ -149,7 +148,7 @@ const invoiceTable = [
         id: 7,
         invoiceId: "#VL25000357",
         name: "Mary Rucker",
-        email: "maryrucker@velzon.com",
+        email: "maryrucker@google.com",
         country: "United Kingdom",
         date: "27 Oct, 2021",
         time: "01:46PM",
@@ -161,7 +160,7 @@ const invoiceTable = [
         id: 8,
         invoiceId: "#VL25000358",
         name: "Alexis Clarke",
-        email: "alexisclarke@velzon.com",
+        email: "alexisclarke@google.com",
         country: "Spain",
         date: "18 Oct, 2021",
         time: "04:55PM",
@@ -172,9 +171,9 @@ const invoiceTable = [
     {
         id: 9,
         invoiceId: "#VL25000359",
-        img: avatar8,
+
         name: "Ryan Cowie",
-        email: "rayancowie@velzon.com",
+        email: "rayancowie@google.com",
         country: "France",
         date: "07 Oct, 2021",
         time: "06:33AM",
@@ -185,9 +184,9 @@ const invoiceTable = [
     {
         id: 10,
         invoiceId: "#VL25000360",
-        img: avatar4,
+
         name: "Christina Maier",
-        email: "christinamaier@velzon.com",
+        email: "christinamaier@google.com",
         country: "United States of America",
         date: "13 Sep, 2021",
         time: "11:59AM",
@@ -198,9 +197,9 @@ const invoiceTable = [
     {
         id: 11,
         invoiceId: "#VL25000361",
-        img: avatar2,
+
         name: "Jennifer Winkel",
-        email: "jenniferwinkal@velzon.com",
+        email: "jenniferwinkal@google.com",
         country: "Brazil",
         date: "15 Aug, 2021",
         time: "01:05PM",
@@ -212,7 +211,7 @@ const invoiceTable = [
         id: 12,
         invoiceId: "#VL25000362",
         name: "Erik Peters",
-        email: "erikpeters@velzon.com",
+        email: "erikpeters@google.com",
         country: "Mexico",
         date: "07 Aug, 2021",
         time: "07:46PM",

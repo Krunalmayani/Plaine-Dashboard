@@ -344,16 +344,20 @@ const TicketsData = () => {
                 <Col lg={12}>
                     <Card>
                         <CardHeader className="border-0">
-                            <div className="d-flex align-items-center">
-                                <h5 className="card-title mb-0 flex-grow-1">Tickets</h5>
+                            <div className="d-flex align-items-center" style={{ justifyContent: "space-between" }}>
                                 <div className="flex-shrink-0">
                                     <div className="d-flex flex-wrap gap-2">
-                                        <button className="btn btn-danger add-btn" onClick={() => { setIsEdit(false); toggle(); }}><i className="ri-add-line align-bottom"></i> Create Tickets</button>
+                                        <button className="btn btn-primary add-btn" onClick={() => { setIsEdit(false); toggle(); }}><i className="ri-add-line align-bottom"></i> Create Tickets</button>
                                         {" "}{isMultiDeleteButton && <button className="btn btn-secondary"
                                             onClick={() => setDeleteModalMulti(true)}
                                         ><i className="ri-delete-bin-2-line"></i></button>}
                                     </div>
                                 </div>
+                                <div className="flex-shrink-0">
+                                    <div className="d-flex flex-wrap gap-2">
+                                        <h5 className="card-title mb-0 flex-grow-1">Tickets</h5>
+                                    </div>
+                                </div>   
                             </div>
                         </CardHeader>
                         <CardBody className='pt-0'>

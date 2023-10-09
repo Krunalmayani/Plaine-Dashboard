@@ -24,18 +24,33 @@ const Description = () => {
                     <Card>
                         <CardBody>
                             <div className="text-muted">
+                                <h6 className="mb-3 fw-bold text-uppercase">Description</h6>
+                                <p>A web-based interactive computing environment for creating and sharing documents that contain live code, equations, visualizations, and narrative text.
+                                    Technical Specifications</p>
+                                <br /><br />
 
-                                <div className="mt-auto">
-                                    <div className="d-flex mb-2" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                                        <div className="flex-shrink-0">
-                                            <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-map-pin-2-line align-bottom"></i> <span style={{ color: "black", fontWeight: "bold" }}>Region: </span>London</div>
-                                            <div><i style={{ color: "#878a99", fontSize: "16px" }} className="las la-server"></i> <span style={{ color: "black", fontWeight: "bold" }}>Server IP: </span>49.36.89.98</div>
-                                            <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-cloud-line"></i> <span style={{ color: "black", fontWeight: "bold" }}>Cloud: </span>AWS</div>
-                                        </div>
-                                        <div className="flex-shrink-0">
-                                            <div style={{ justifyContent: "space-between" }}><i style={{ color: "#878a99", fontSize: "16px" }} className="las la-cog"></i> <span style={{ color: "black", fontWeight: "bold" }}>Configuration: </span><p style={{ paddingLeft: "5px" }}> 8 vCPU<br />12GB RAM<br />250GB SSD<br />($70/mo)</p></div>
-                                        </div>
-                                    </div>
+                                <h6 className="mb-3 fw-bold text-uppercase">Technical Specifications</h6>
+
+                                <ul className="ps-4 vstack gap-2">
+                                    <li><span>Architecture: </span> Web-based interface for Python programming.</li>
+                                    <li><span>Input Data Format: </span> Supports various data formats, including CSV, JSON, and more.</li>
+                                    <li><span>Output Data Format: </span> Outputs can include text, tables, charts, and interactive widgets.</li>
+                                    <li><span>Supported Frameworks: </span> Compatible with Python libraries like TensorFlow, PyTorch, and scikit-learn.</li>
+                                </ul>
+
+                                <br /><br />
+
+                                <h6 className="mb-3 fw-bold text-uppercase">Model Performance Metrics</h6>
+
+                                <ul className="ps-4 vstack gap-2">
+                                    <li><span>Interactivity: </span> High interactivity for data exploration and analysis.</li>
+                                    <li><span>Ease of Use: </span> User-friendly interface for users of all levels.</li>
+                                    <li><span>Versatility: </span> Supports multiple programming languages and data formats.</li>
+                                    <li><span>Community: </span> Large and active user community with extensive resources.</li>
+                                </ul>
+
+                                <div>
+                                    <button type="button" className="btn btn-link link-success p-0">Read more</button>
                                 </div>
 
                                 <div className="pt-3 border-top border-top-dashed mt-4">
@@ -43,14 +58,14 @@ const Description = () => {
 
                                         <Col lg={3} sm={6}>
                                             <div>
-                                                <p className="mb-2 text-uppercase fw-medium fs-14">Deployed Date:</p>
+                                                <p className="mb-2 text-uppercase fw-medium fs-14">Added Date:</p>
                                                 <h5 className="fs-15 mb-0">15 Sep, 2021</h5>
                                             </div>
                                         </Col>
                                         <Col lg={3} sm={6}>
                                             <div>
                                                 <p className="mb-2 text-uppercase fw-medium fs-14">Status :</p>
-                                                <div className="badge bg-success fs-12">Running</div>
+                                                <div className="badge bg-warning fs-12">Ready to Deploy</div>
                                             </div>
                                         </Col>
                                     </Row>
@@ -60,11 +75,8 @@ const Description = () => {
                                     <h6 className="mb-3 fw-bold text-uppercase">Resources</h6>
                                     <Row className="g-3">
                                         <Col xxl={4} lg={4}>
-                                            <a className='pe-4' target="_blank" href='https://jupyter.org/try-jupyter/retro/notebooks/?path=notebooks/Intro.ipynb'>
+                                            <a target="_blank" href='https://jupyter.org/try-jupyter/retro/notebooks/?path=notebooks/Intro.ipynb'>
                                                 <Button color="primary"> Launch Demo </Button>
-                                            </a>
-                                            <a target="_blank">
-                                                <Button color="primary"> Launch App </Button>
                                             </a>
                                         </Col>
                                         <Col xxl={4} lg={4}>
