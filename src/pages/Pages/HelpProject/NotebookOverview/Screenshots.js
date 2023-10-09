@@ -40,8 +40,7 @@ const Screenshots = () => {
 
                     </div>
 
-                  
-                  
+                   
                 </CardBody>
             </Card>
         </React.Fragment>

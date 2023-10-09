@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardBody, Col, DropdownItem, DropdownMenu, DropdownToggle, Input, Row, UncontrolledDropdown } from 'reactstrap';
+import { Card, CardBody, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, Input, Offcanvas, OffcanvasBody, Row, UncontrolledDropdown } from 'reactstrap';
 import DeleteModal from '../../../../Components/Common/DeleteModal';
 import { ToastContainer } from 'react-toastify';
 
@@ -56,34 +56,54 @@ const List = () => {
         }
     };
 
+    //OffCanvas  
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleOffCanvas = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <React.Fragment>
-            <ToastContainer closeButton={false} />
-            <DeleteModal
-                show={deleteModal}
-                onDeleteClick={() => handleDeleteProjectList()}
-                onCloseClick={() => setDeleteModal(false)}
-            />
-            <Row className="g-4 mb-3">
-                <div className="col-sm-3 ms-auto">
-                    <div className="d-flex justify-content-sm-end gap-2">
-                        <div className="search-box ms-2 col-sm-7">
-                            <Input type="text" className="form-control" placeholder="Search..." />
-                            <i className="ri-search-line search-icon"></i>
-                        </div>
+            <CardHeader style={{ backgroundColor: "white", margin: "10px 0", borderRadius: "5px" }}>
+                <Row className="justify-content-center mb-4">
+                    <Col lg={6} className='mt-4'>
+                        <Row className="g-2">
+                            <Col>
+                                <div className="position-relative mb-3">
+                                    <Input type="text" className="form-control form-control-lg bg-light border-light" placeholder="Search here.." defaultValue="HSN Code Classifier" />
+                                    <Link to="#" className="btn btn-link link-success btn-lg position-absolute end-0 top-0" onClick={toggleOffCanvas}><i className="ri-mic-fill"></i></Link>
+                                </div>
+                            </Col>
+                            <div className="col-auto">
+                                <button type="submit" className="btn btn-primary btn-lg waves-effect waves-light"><i className="mdi mdi-magnify me-1"></i> Search</button>
+                            </div>
+                        </Row>
+                    </Col>
+                    <Col lg={12}>
+                        <h5 className="fs-16 fw-bold text-center mb-0">Showing results for "<span className="text-primary fw-medium fst-italic">HSN Code Classifier</span> "</h5>
+                    </Col>
+                </Row>
 
-                        <select className="form-control w-md" data-choices data-choices-search-false>
-                            <option value="All">All</option>
-                            <option value="Last 7 Days">Last 7 Days</option>
-                            <option value="Last 30 Days">Last 30 Days</option>
-                            <option value="Last Year">Last Year</option>
-                            <option value="This Month">This Month</option>
-                            <option value="Today">Today</option>
-                            <option value="Yesterday" defaultValue>Yesterday</option>
-                        </select>
-                    </div>
-                </div>
-            </Row>
+                <Offcanvas isOpen={isOpen}
+                    direction="top"
+                    toggle={toggleOffCanvas}
+                    tabIndex="-1"
+                >
+                    <OffcanvasBody>
+                        <button type="button" className="btn-close text-reset float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <div className="d-flex flex-column h-100 justify-content-center align-items-center">
+                            <div className="search-voice">
+                                <i className="ri-mic-fill align-middle"></i>
+                                <span className="voice-wave"></span>
+                                <span className="voice-wave"></span>
+                                <span className="voice-wave"></span>
+                            </div>
+                            <h4>Talk to me, what can I do for you?</h4>
+                        </div>
+                    </OffcanvasBody>
+                </Offcanvas>
+            </CardHeader>
 
             <div className="row">
                 {(projectLists || []).map((item, index) => (
@@ -136,7 +156,7 @@ const List = () => {
                                     <div className="card-footer bg-transparent border-top-dashed py-2">
                                         <div className="d-flex align-items-center">
                                             <div className="flex-grow-1">
-                                                <div className="avatar-group" style={{alignItems: 'center', display: 'flex'}}>
+                                                <div className="avatar-group" style={{ alignItems: 'center', display: 'flex' }}>
                                                     {item.subItem.map((item, key) => (
                                                         <React.Fragment key={key}>
                                                             {item.imgFooter ? <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Darline Williams">

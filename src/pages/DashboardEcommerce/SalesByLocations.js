@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardBody, CardHeader, Col } from 'reactstrap';
-import Vector from './VectorMap';
 
 const SalesByLocations = () => {
     return (
@@ -18,13 +17,7 @@ const SalesByLocations = () => {
 
                     <CardBody>
 
-                        <div
-                            data-colors='["--vz-light", "--vz-success", "--vz-primary"]'
-                            style={{ height: "269px" }} dir="ltr">
-                            <Vector
-                                value="world_mill"
-                            />
-                        </div>
+                        
 
                         <div className="px-2 py-2 mt-1">
                             <p className="mb-1">Canada <span className="float-end">75%</span></p>

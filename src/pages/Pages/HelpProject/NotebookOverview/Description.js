@@ -58,14 +58,14 @@ const Description = () => {
 
                                         <Col lg={3} sm={6}>
                                             <div>
-                                                <p className="mb-2 text-uppercase fw-medium fs-14">Deployed Date:</p>
+                                                <p className="mb-2 text-uppercase fw-medium fs-14">Added Date:</p>
                                                 <h5 className="fs-15 mb-0">15 Sep, 2021</h5>
                                             </div>
                                         </Col>
                                         <Col lg={3} sm={6}>
                                             <div>
                                                 <p className="mb-2 text-uppercase fw-medium fs-14">Status :</p>
-                                                <div className="badge bg-success fs-12">Running</div>
+                                                <div className="badge bg-warning fs-12">Ready to Deploy</div>
                                             </div>
                                         </Col>
                                     </Row>

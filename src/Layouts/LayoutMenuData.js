@@ -106,9 +106,6 @@ const Navdata = () => {
         if (iscurrentState !== 'AI/ML Notebooks') {
             setIsAIMLNotebooks(false);
         }
-        if (iscurrentState !== 'Monitoring and Health') {
-            setIsMonitoringAndHealth(false);
-        }
         if (iscurrentState !== 'Manage Billing') {
             setIsManageBilling(false);
         }
@@ -362,7 +359,7 @@ const Navdata = () => {
             id: "ai/mlmodels",
             label: "AI/ML Models",
             icon: "ri-apps-2-line",
-            link: "/#",
+            link: "/models-details",
             stateVariables: isAiMlModels,
             click: function (e) {
                 e.preventDefault();
@@ -385,19 +382,6 @@ const Navdata = () => {
             },
         },
         {
-            id: "monitoringandhealth",
-            label: "Monitoring and Health",
-            icon: "bx bx-heart-circle",
-            link: "/#",
-            stateVariables: isMonitoringandHealth,
-            click: function (e) {
-                e.preventDefault();
-                setIsMonitoringAndHealth(!isMonitoringandHealth);
-                setIscurrentState('Monitoring and Health');
-                updateIconSidebar(e);
-            },
-        },
-        {
             id: "managebilling",
             label: "Manage Billing",
             icon: "mdi mdi-progress-wrench",
@@ -413,13 +397,7 @@ const Navdata = () => {
                 {
                     id: "paymenthistory",
                     label: "Payment History",
-                    link: "/dashboard-analytics",
-                    parentId: "managebilling",
-                },
-                {
-                    id: "invoice",
-                    label: "Invoice",
-                    link: "/dashboard-crm",
+                    link: "/payment-history",
                     parentId: "managebilling",
                 },
             ]
@@ -468,7 +446,7 @@ const Navdata = () => {
             id: "tutorials",
             label: "Tutorials",
             icon: "ri-video-line",
-            link: "/ui-embed-video",
+            link: "/tutorial",
             stateVariables: isTutorials,
             click: function (e) {
                 e.preventDefault();

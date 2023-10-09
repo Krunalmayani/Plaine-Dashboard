@@ -13,14 +13,12 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import CountUp from "react-countup";
 import * as moment from "moment";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
 import TableContainer from "../../Components/Common/TableContainer";
 import DeleteModal from "../../Components/Common/DeleteModal";
 
 //Import Icons
-import FeatherIcon from "feather-icons-react";
 
 import Loader from "../../Components/Common/Loader";
 
@@ -36,9 +34,8 @@ import {
 
 //redux
 import { useSelector, useDispatch } from "react-redux";
-
-const InvoiceList = () => {
-  document.title = "Invoice List | Velzon - React Admin & Dashboard Template";
+function HistoryList(props) {
+  document.title = "Invoice List | Plaine - Unleashing Innovation with Artificial Intelligence";
 
   const dispatch = useDispatch();
 
@@ -145,11 +142,11 @@ const InvoiceList = () => {
         id: '#',
       },
       {
-        Header: "ID",
+        Header: "EMI ID",
         accessor: "invoiceId",
         filterable: true,
         Cell: (cell) => {
-          return <Link to="/apps-invoices-details" className="fw-medium link-primary">{cell.value}</Link>;
+          return <Link to="/payment-details" className="fw-medium link-primary">{cell.value}</Link>;
         },
       },
       {
@@ -257,134 +254,73 @@ const InvoiceList = () => {
     ],
     [checkedAll]
   );
-
   return (
     <React.Fragment>
-      <div className="page-content">
-        <DeleteModal
-          show={deleteModal}
-          onDeleteClick={() => handleDeleteInvoice()}
-          onCloseClick={() => setDeleteModal(false)}
-        />
-        <DeleteModal
-          show={deleteModalMulti}
-          onDeleteClick={() => {
-            deleteMultiple();
-            setDeleteModalMulti(false);
-          }}
-          onCloseClick={() => setDeleteModalMulti(false)}
-        />
-        <Container fluid>
-          <BreadCrumb title="Invoice List" pageTitle="Invoices" />
-          <Row>
-            {invoiceWidgets.map((invoicewidget, key) => (
-              <React.Fragment key={key}>
-                {/* <Col xl={3} md={6}>
-                  <Card className="card-animate">
-                    <CardBody>
-                      <div className="d-flex align-items-center">
-                        <div className="flex-grow-1">
-                          <p className="text-uppercase fw-medium text-muted mb-0">
-                            {invoicewidget.label}
-                          </p>
-                        </div>
-                        <div className="flex-shrink-0">
-                          <h5
-                            className={
-                              "fs-14 mb-0 text-" + invoicewidget.percentageClass
-                            }
+
+      <DeleteModal
+        show={deleteModal}
+        onDeleteClick={() => handleDeleteInvoice()}
+        onCloseClick={() => setDeleteModal(false)}
+      />
+      <DeleteModal
+        show={deleteModalMulti}
+        onDeleteClick={() => {
+          deleteMultiple();
+          setDeleteModalMulti(false);
+        }}
+        onCloseClick={() => setDeleteModalMulti(false)}
+      />
+      <Container fluid>
+
+        <Row>
+          <Col lg={12}>
+            <Card id="invoiceList">
+              <CardHeader className="border-0">
+                <div className="d-flex align-items-center">
+                  <h5 className="card-title mb-0 flex-grow-1 fs-17">Invoices</h5>
+                  <div className="flex-shrink-0">
+                    {/* <div className="d-flex gap-2 flex-wrap">
+                          {isMultiDeleteButton && <button className="btn btn-primary"
+                            onClick={() => setDeleteModalMulti(true)}
+                          ><i className="ri-delete-bin-2-line"></i></button>}
+                          <Link
+                            to="/apps-invoices-create"
+                            className="btn btn-danger"
                           >
-                            <i className="ri-arrow-right-up-line fs-13 align-middle"></i>{" "}
-                            {invoicewidget.percentage}
-                          </h5>
-                        </div>
-                      </div>
-                      <div className="d-flex align-items-end justify-content-between mt-4">
-                        <div>
-                          <h4 className="fs-22 fw-semibold ff-secondary mb-4">
-                            <CountUp
-                              start={0}
-                              prefix={invoicewidget.prefix}
-                              suffix={invoicewidget.suffix}
-                              decimals="2"
-                              end={invoicewidget.counter}
-                              duration={4}
-                              className="counter-value"
-                            />
-                          </h4>
-                          <span className="badge bg-warning me-1">
-                            {invoicewidget.badge}
-                          </span>{" "}
-                          <span className="text-muted">
-                            {" "}
-                            {invoicewidget.caption}
-                          </span>
-                        </div>
-                        <div className="avatar-sm flex-shrink-0">
-                          <span className="avatar-title bg-light rounded fs-3">
-                            <FeatherIcon
-                              icon={invoicewidget.feaIcon}
-                              className="text-success icon-dual-success"
-                            />
-                          </span>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </Col> */}
-              </React.Fragment>
-            ))}
-          </Row>
-
-          <Row>
-            <Col lg={12}>
-              <Card id="invoiceList">
-                <CardHeader className="border-0">
-                  <div className="d-flex align-items-center">
-                    <h5 className="card-title mb-0 flex-grow-1 fs-17">Invoices</h5>
-                    <div className="flex-shrink-0">
-                      {/* <div className="d-flex gap-2 flex-wrap">
-                        {isMultiDeleteButton && <button className="btn btn-primary"
-                          onClick={() => setDeleteModalMulti(true)}
-                        ><i className="ri-delete-bin-2-line"></i></button>}
-                        <Link
-                          to="/apps-invoices-create"
-                          className="btn btn-danger"
-                        >
-                          <i className="ri-add-line align-bottom me-1"></i> Create
-                          Invoice
-                        </Link>
-
-                      </div> */}
-                    </div>
+                            <i className="ri-add-line align-bottom me-1"></i> Create
+                            Invoice
+                          </Link>
+  
+                        </div> */}
                   </div>
-                </CardHeader>
-                <CardBody className="pt-0">
-                  <div>
-                    {isInvoiceSuccess && invoices.length ? (
-                      <TableContainer
-                        columns={columns}
-                        data={(invoices || [])}
-                        isGlobalFilter={true}
-                        isAddUserList={false}
-                        customPageSize={10}
-                        className="custom-header-css"
-                        theadClass="text-muted text-uppercase fs-13"
-                        isInvoiceListFilter={true}
-                        SearchPlaceholder='Search for customer, email, country, status or something...'
-                      />
-                    ) : (<Loader error={error} />)
-                    }
-                  </div>
-                  <ToastContainer closeButton={false} limit={1} />
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+                </div>
+              </CardHeader>
+              <CardBody className="pt-0">
+                <div>
+                  {isInvoiceSuccess && invoices.length ? (
+                    <TableContainer
+                      columns={columns}
+                      data={(invoices || [])}
+                      isGlobalFilter={true}
+                      isAddUserList={false}
+                      customPageSize={10}
+                      className="custom-header-css"
+                      theadClass="text-muted text-uppercase fs-13"
+                      isInvoiceListFilter={true}
+                      SearchPlaceholder='Search for customer, email, country, status or something...'
+                    />
+                  ) : (<Loader error={error} />)
+                  }
+                </div>
+                <ToastContainer closeButton={false} limit={1} />
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
     </React.Fragment>
   );
-};
+}
 
-export default InvoiceList;
+export default HistoryList;

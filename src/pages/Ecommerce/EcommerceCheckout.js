@@ -157,6 +157,12 @@ const EcommerceCheckout = () => {
                     <TabContent activeTab={activeTab}>
                       <TabPane tabId={1} id="pills-bill-info">
                         <div>
+                          <div>
+                          <h4 className="mb-1">Project Name</h4>
+                              <p className="text-muted mb-10">
+                              User-friendly project name such as my personal notebook
+                              </p>
+                          </div>
                           <Row>
                             <Label htmlFor="country" className="form-label">
                               <h6 className="mb-1">Region</h6>

@@ -37,7 +37,7 @@ const Section = () => {
                                             </div>
                                             <div className="col-md">
                                                 <div>
-                                                    <h4 className="fw-bold">Jupyter Notebook V 1.0</h4>
+                                                    <h4><span className="fw-bold" style={{ fontSize: "1.3125rem"}}>Project Name: </span>My Personal Notebook (Based on Jupyter Notebook)</h4>
                                                     <div className="hstack gap-3 flex-wrap">
                                                         <div><i className="ri-sticky-note-line"></i> Notebook</div>
                                                         <div className="vr"></div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card, CardBody, Col, DropdownItem, DropdownMenu, DropdownToggle, Input, Row, UncontrolledDropdown } from 'reactstrap';
+import { Button, Card, CardHeader, CardBody, Col, DropdownItem, DropdownMenu, DropdownToggle, Input, Row, UncontrolledDropdown, Offcanvas, OffcanvasBody } from 'reactstrap';
 import DeleteModal from '../../../../Components/Common/DeleteModal';
 import { ToastContainer } from 'react-toastify';
 
@@ -56,34 +56,54 @@ const List = () => {
         }
     };
 
+    //OffCanvas  
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleOffCanvas = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <React.Fragment>
-            <ToastContainer closeButton={false} />
-            <DeleteModal
-                show={deleteModal}
-                onDeleteClick={() => handleDeleteProjectList()}
-                onCloseClick={() => setDeleteModal(false)}
-            />
-            <Row className="g-4 mb-3">
-                <div className="col-sm-3 ms-auto">
-                    <div className="d-flex justify-content-sm-end gap-2">
-                        <div className="search-box ms-2 col-sm-7">
-                            <Input type="text" className="form-control" placeholder="Search..." />
-                            <i className="ri-search-line search-icon"></i>
-                        </div>
+            <CardHeader style={{ backgroundColor: "white", margin: "10px 0", borderRadius: "5px" }}>
+                <Row className="justify-content-center mb-4">
+                    <Col lg={6} className='mt-4'>
+                        <Row className="g-2">
+                            <Col>
+                                <div className="position-relative mb-3">
+                                    <Input type="text" className="form-control form-control-lg bg-light border-light" placeholder="Search here.." defaultValue="HSN Code Classifier" />
+                                    <Link to="#" className="btn btn-link link-success btn-lg position-absolute end-0 top-0" onClick={toggleOffCanvas}><i className="ri-mic-fill"></i></Link>
+                                </div>
+                            </Col>
+                            <div className="col-auto">
+                                <button type="submit" className="btn btn-primary btn-lg waves-effect waves-light"><i className="mdi mdi-magnify me-1"></i> Search</button>
+                            </div>
+                        </Row>
+                    </Col>
+                    <Col lg={12}>
+                        <h5 className="fs-16 fw-bold text-center mb-0">Showing results for "<span className="text-primary fw-medium fst-italic">HSN Code Classifier</span> "</h5>
+                    </Col>
+                </Row>
 
-                        <select className="form-control w-md" data-choices data-choices-search-false>
-                            <option value="All">All</option>
-                            <option value="Last 7 Days">Last 7 Days</option>
-                            <option value="Last 30 Days">Last 30 Days</option>
-                            <option value="Last Year">Last Year</option>
-                            <option value="This Month">This Month</option>
-                            <option value="Today">Today</option>
-                            <option value="Yesterday" defaultValue>Yesterday</option>
-                        </select>
-                    </div>
-                </div>
-            </Row>
+                <Offcanvas isOpen={isOpen}
+                    direction="top"
+                    toggle={toggleOffCanvas}
+                    tabIndex="-1"
+                >
+                    <OffcanvasBody>
+                        <button type="button" className="btn-close text-reset float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <div className="d-flex flex-column h-100 justify-content-center align-items-center">
+                            <div className="search-voice">
+                                <i className="ri-mic-fill align-middle"></i>
+                                <span className="voice-wave"></span>
+                                <span className="voice-wave"></span>
+                                <span className="voice-wave"></span>
+                            </div>
+                            <h4>Talk to me, what can I do for you?</h4>
+                        </div>
+                    </OffcanvasBody>
+                </Offcanvas>
+            </CardHeader>
 
             <div className="row">
                 {(projectLists4 || []).map((item, index) => (
@@ -93,9 +113,9 @@ const List = () => {
                                 <Card className="card-height-100">
                                     <CardBody>
                                         <div className="d-flex flex-column h-100">
-                                            <div className="d-flex">
+                                            <div className="d-flex justify-Content-between">
                                                 <div className="flex-grow-1">
-                                                    <p className="text-muted mb-4">{item.time}</p>
+                                                    <p className="text-muted mb-4">Deployed on 7th Oct 2023</p>
                                                 </div>
                                                 <div className="flex-shrink-0">
                                                     <div className="d-flex gap-1 align-items-center">
@@ -110,12 +130,12 @@ const List = () => {
                                                             </DropdownToggle>
 
                                                             <DropdownMenu className="dropdown-menu-end">
-                                                                <DropdownItem href="notebook-overview"><i className="ri-eye-fill align-bottom me-2 text-muted"></i> Add Domain</DropdownItem>
-                                                                <DropdownItem href="apps-projects-create"><i className="ri-pencil-fill align-bottom me-2 text-muted"></i> Launch Arp</DropdownItem>
-                                                                <DropdownItem href="notebook-overview"><i className="ri-eye-fill align-bottom me-2 text-muted"></i> API Key</DropdownItem>
-                                                                <DropdownItem href="apps-projects-create"><i className="ri-pencil-fill align-bottom me-2 text-muted"></i> View Usage</DropdownItem>
-                                                                <DropdownItem href="notebook-overview"><i className="ri-eye-fill align-bottom me-2 text-muted"></i> Alert</DropdownItem>
-                                                                <DropdownItem href="apps-projects-create"><i className="ri-pencil-fill align-bottom me-2 text-muted"></i> Destroy</DropdownItem>
+                                                                <DropdownItem href="project-overview"><i className="ri-eye-fill align-bottom me-2 text-muted"></i> Add Domain</DropdownItem>
+                                                                <DropdownItem href="apps-projects-create"><i className="mdi mdi-rocket-launch-outline align-bottom me-2 text-muted"></i> Launch Arp</DropdownItem>
+                                                                <DropdownItem href="project-overview"><i className="ri-folder-keyhole-line align-bottom me-2 text-muted"></i> API Key</DropdownItem>
+                                                                <DropdownItem href="apps-projects-create"><i className="mdi mdi-view-list align-bottom me-2 text-muted"></i> View Usage</DropdownItem>
+                                                                <DropdownItem href="project-overview"><i className="mdi mdi-alert align-bottom me-2 text-muted"></i> Alert</DropdownItem>
+                                                                <DropdownItem href="apps-projects-create"><i className="mdi mdi-delete-restore align-bottom me-2 text-muted"></i> Destroy</DropdownItem>
                                                                 <div className="dropdown-divider"></div>
                                                                 <DropdownItem href="#" onClick={() => onClickData(item)} data-bs-toggle="modal" data-bs-target="#removeProjectModal"><i className="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Deploy</DropdownItem>
                                                             </DropdownMenu>
@@ -131,38 +151,36 @@ const List = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex-grow-1">
-                                                    <h5 className="mb-1 fs-16"><Link to="/notebook-overview" className="text-dark">{item.label}</Link></h5>
-                                                    <p className="text-muted mb-3">{item.caption}</p>
+                                                    <h5 className="mb-1 fs-16"><Link to="/project-overview" className="text-dark"><span style={{ fontSize: "18px", fontWeight: "bold" }}>Project Name: </span>{item.label}<br />(Based on Jupyter Notebook)</Link></h5>
                                                 </div>
                                             </div>
                                             <div className="mt-auto">
                                                 <div className="d-flex mb-2" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
                                                     <div className="flex-shrink-0">
-                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-map-pin-2-line align-bottom"></i> <span>London </span></div>
+                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-map-pin-2-line align-bottom"></i> <span style={{ fontWeight: "bold" }}>Region: </span>London</div>
+                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-google-line"></i> <span style={{ fontWeight: "bold" }}>Server IP: </span>49.36.89.98</div>
+                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-cloud-line"></i> <span style={{ fontWeight: "bold" }}>Deployed: </span>AWS</div>
                                                     </div>
                                                     <div className="flex-shrink-0">
-                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-google-line"></i> <span>Google IP: </span>10.4.9.3</div>
+                                                        <div style={{ display: "flex", justifyContent: "space-between" }}><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-google-line"></i> <span style={{ fontWeight: "bold" }}>configuren: </span><p style={{ paddingLeft: "5px" }}> 8 vCPU<br />12GB RAM<br />250GB RAM SSD<br />($70/mo)</p></div>
                                                     </div>
                                                     <div className="flex-shrink-0">
-                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-cloud-line"></i> <span>Cloud: </span>Aws</div>
+                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-cloud-line"></i> <span style={{ fontWeight: "bold" }}>Cloud: </span>Aws</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="mt-auto">
                                                 <div className="d-flex mb-2" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
                                                     <div className="flex-shrink-0">
-                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-map-pin-2-line align-bottom"></i> <span>London </span></div>
+                                                        <Button color="primary"> Launch App </Button>
                                                     </div>
                                                     <div className="flex-shrink-0">
-                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-google-line"></i> <span>Google IP: </span>10.4.9.3</div>
+                                                        <Button color="secondary"> Clone App </Button>
                                                     </div>
                                                     <div className="flex-shrink-0">
-                                                        <div><i style={{ color: "#878a99", fontSize: "16px" }} className="ri-cloud-line"></i> <span>Cloud: </span>Aws</div>
+                                                        <Button color="success"> Domain </Button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="mt-auto">
-                                                <Button className="btn-soft-info"> Launch App </Button>
                                             </div>
                                         </div>
                                     </CardBody>
