@@ -19,7 +19,7 @@ function TileBox(props) {
                         <Card className={"card-height-100 " + item.class}>
                             <CardBody>
                                 <UncontrolledDropdown className="float-end">
-                                    <DropdownToggle tag="a" className="text-reset dropdown-btn" href="#">
+                                    <DropdownToggle tag="a" className="text-reset dropdown-btn">
                                         <span className="text-muted fs-18"><i className="mdi mdi-dots-vertical"></i></span>
                                     </DropdownToggle>
                                     <DropdownMenu className="dropdown-menu-end">

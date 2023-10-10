@@ -204,7 +204,7 @@ const Navdata = () => {
             id: "dashboard2",
             label: "Dashboards",
             icon: "ri-dashboard-2-line",
-            link: "/#",
+            link: "/dashboard",
             stateVariables: isDashboard2,
             click: function (e) {
                 e.preventDefault();
@@ -212,135 +212,6 @@ const Navdata = () => {
                 setIscurrentState('Dashboard2');
                 updateIconSidebar(e);
             },
-                // subItems: [
-                //     {
-                //         id: "appsprojects",
-                //         label: "Projects",
-                //         link: "/#",
-                //         isChildItem: true,
-                //         click: function (e) {
-                //             e.preventDefault();
-                //             setIsProjects2(!isProjects2);
-                //         },
-                //         parentId: "dashboard2",
-                //         stateVariables: isProjects2,
-                //         childItems: [
-                //             { id: 1, label: "List", link: "/apps-projects-list2", parentId: "dashboard2", },
-                //             { id: 2, label: "Overview", link: "/apps-projects-overview2", parentId: "dashboard2", },
-                //         ]
-                //     },
-                //     {
-                //         id: "invoices",
-                //         label: "Invoices",
-                //         link: "/#",
-                //         isChildItem: true,
-                //         click: function (e) {
-                //             e.preventDefault();
-                //             setIsInvoices2(!isInvoices2);
-                //         },
-                //         parentId: "dashboard2",
-                //         stateVariables: isInvoices2,
-                //         childItems: [
-                //             { id: 1, label: "List View", link: "/apps-invoices-list2" },
-                //             { id: 2, label: "Details", link: "/apps-invoices-details2" },
-                //         ]
-                //     },
-                //     {
-                //         id: "supportTickets",
-                //         label: "Support Tickets",
-                //         link: "/#",
-                //         isChildItem: true,
-                //         click: function (e) {
-                //             e.preventDefault();
-                //             setIsSupportTickets2(!isSupportTickets2);
-                //         },
-                //         parentId: "dashboard2",
-                //         stateVariables: isSupportTickets2,
-                //         childItems: [
-                //             { id: 1, label: "List View", link: "/apps-tickets-list2" },
-                //             { id: 2, label: "Ticket Details", link: "/apps-tickets-details2" },
-                //         ]
-                //     },
-                //     {
-                //         id: "job",
-                //         label: "Jobs",
-                //         link: "/#",
-                //         parentId: "dashboard2",
-                //         badgeName: "New",
-                //         badgeColor: "success",
-                //         isChildItem: true,
-                //         click: function (e) {
-                //             e.preventDefault();
-                //             setIsJobs2(!isJobs2);
-                //         },
-                //         stateVariables: isJobs2,
-                //         childItems: [
-                //             {
-                //                 id: 2,
-                //                 label: "Job Lists",
-                //                 link: "/#",
-                //                 parentId: "dashboard2",
-                //                 isChildItem: true,
-                //                 stateVariables: isJobList2,
-                //                 click: function (e) {
-                //                     e.preventDefault();
-                //                     setIsJobList2(!isJobList2);
-                //                 },
-                //                 childItems: [
-                //                     {
-                //                         id: 2,
-                //                         label: "Grid",
-                //                         link: "/apps-job-grid-lists2",
-                //                         parentId: "dashboard2",
-                //                     },
-                //                 ],
-                //             },
-                //         ],
-                //     },
-                //     {
-                //         id: "appsecommerce",
-                //         label: "Ecommerce",
-                //         link: "/#",
-                //         isChildItem: true,
-                //         click: function (e) {
-                //             e.preventDefault();
-                //             setIsEcommerce2(!isEcommerce2);
-                //         },
-                //         parentId: "dashboard2",
-                //         stateVariables: isEcommerce2,
-                //         childItems: [
-                //             { id: 7, label: "Shopping Cart", link: "/apps-ecommerce-cart2", parentId: "dashboard2" },
-                //             { id: 8, label: "Checkout", link: "/apps-ecommerce-checkout2", parentId: "dashboard2" },
-                //         ]
-                //     },
-                //     {
-                //         id: "faqs",
-                //         label: "FAQs",
-                //         link: "/pages-faqs2",
-                //         parentId: "dashboard2"
-                //     },
-                //     {
-                //         id: "profile",
-                //         label: "Profile",
-                //         link: "/#",
-                //         isChildItem: true,
-                //         click: function (e) {
-                //             e.preventDefault();
-                //             setIsProfile2(!isProfile2);
-                //         },
-                //         parentId: "dashboard2",
-                //         stateVariables: isProfile2,
-                //         childItems: [
-                //             { id: 2, label: "Settings", link: "/pages-profile-settings2", parentId: "dashboard2" },
-                //         ]
-                //     },
-                //     {
-                //         id: "pricing",
-                //         label: "Pricing",
-                //         link: "/pages-pricing2",
-                //         parentId: "dashboard2"
-                //     },
-                // ]
         },
         {
             id: "project",
