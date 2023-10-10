@@ -53,9 +53,12 @@ import ExportCSVModal from "../../Components/Common/ExportCSVModal";
 // Formik
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { crmcontactsNew } from "../../common/data/crm";
+// import {crmcontacts} from '../../common/data/crm'
 
 const TeamMembers = () => {
   const dispatch = useDispatch();
+
 
   const { crmcontacts, isContactSuccess, error } = useSelector((state) => ({
     crmcontacts: state.Crm.crmcontacts,
@@ -300,20 +303,7 @@ const TeamMembers = () => {
         Cell: (contact) => (
           <>
             <div className="d-flex align-items-center">
-              <div className="flex-shrink-0">
-                {contact.row.original.image_src ? <img
-                  src={process.env.REACT_APP_API_URL + "/images/users/" + contact.row.original.image_src}
-                  alt=""
-                  className="avatar-xxs rounded-circle"
-                /> :
-                  <div className="flex-shrink-0 avatar-xs me-2">
-                    <div className="avatar-title bg-soft-success text-success rounded-circle fs-13">
-                      {contact.row.original.name.charAt(0)}
-                    </div>
-                  </div>
-                  // <img src={dummyImg} alt="" className="avatar-xxs rounded-circle" />
-                }
-              </div>
+
               <div className="flex-grow-1 ms-2 name">
                 {contact.row.original.name}
               </div>
@@ -323,7 +313,7 @@ const TeamMembers = () => {
       },
       {
         Header: "Role",
-        accessor :"tags",
+        accessor: "tags",
         filterable: true,
       },
       {
@@ -463,10 +453,10 @@ const TeamMembers = () => {
               <Card id="contactList">
                 <CardBody className="pt-0">
                   <div>
-                    {isContactSuccess && crmcontacts.length ? (
+                    {crmcontactsNew.length ? (
                       <TableContainer
                         columns={columns}
-                        data={(crmcontacts || [])}
+                        data={(crmcontactsNew || [])}
                         isGlobalFilter={true}
                         isAddUserList={false}
                         customPageSize={8}
@@ -562,7 +552,7 @@ const TeamMembers = () => {
                                 Role
                               </Label>
                               <Select
-                               
+
                                 value={tag}
                                 onChange={(e) => {
                                   handlestag(e);
