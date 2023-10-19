@@ -4,7 +4,10 @@ export const POST_FAKE_REGISTER = "/auth/signup";
 //LOGIN
 export const POST_FAKE_LOGIN = "/auth/signin";
 export const POST_FAKE_JWT_LOGIN = "/post-jwt-login";
+export const POST_FAKE_ADMINLOGIN = "/auth/signin";
+export const POST_FAKE_JWT_ADMINLOGIN = "/post-jwt-login";
 export const POST_FAKE_PASSWORD_FORGET = "/auth/forgot-password";
+export const ADMIN_FAKE_PASSWORD_FORGET = "/auth/forgot-password";
 export const POST_FAKE_JWT_PASSWORD_FORGET = "/jwt-forget-pwd";
 export const SOCIAL_LOGIN = "/social-login";
 
@@ -225,3 +228,5 @@ export const GET_APPLICATION_LIST = "/application-list";
 
 //JOB API Key
 export const GET_API_KEY = "/api-key";
+export const GET_MODELS_CATLOG = "/model-catlog";
+

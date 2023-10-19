@@ -12,69 +12,19 @@ const Navdata = () => {
     const [isMonitoringandHealth, setIsMonitoringAndHealth] = useState(false);
     const [isManagebilling, setIsManageBilling] = useState(false);
     const [isHelp, setIsHelp] = useState(false);
+    const [model, setmodel] = useState(false);
     const [isManageprofile, setIsManageProfile] = useState(false);
     const [isSettings, setIsSettings] = useState(false);
     const [isTutorials, setIsTutorials] = useState(false);
     const [isTeamMembers, setIsTeamMembers] = useState(false);
+    const [UserManagement, setIsUserManagement] = useState(false);
+    const [PurchaseHistory, setPurchaseHistory] = useState(false);
 
     //state data
     const [isDashboard, setIsDashboard] = useState(false);
-    const [isApps, setIsApps] = useState(false);
-    const [isAuth, setIsAuth] = useState(false);
-    const [isPages, setIsPages] = useState(false);
-    const [isPages2, setIsPages2] = useState(false);
-    const [isBaseUi, setIsBaseUi] = useState(false);
-    const [isAdvanceUi, setIsAdvanceUi] = useState(false);
-    const [isForms, setIsForms] = useState(false);
-    const [isTables, setIsTables] = useState(false);
-    const [isCharts, setIsCharts] = useState(false);
-    const [isIcons, setIsIcons] = useState(false);
-    const [isMaps, setIsMaps] = useState(false);
-    const [isMultiLevel, setIsMultiLevel] = useState(false);
 
-    // Apps
-    const [isEmail, setEmail] = useState(false);
-    const [isSubEmail, setSubEmail] = useState(false);
-    const [isEcommerce, setIsEcommerce] = useState(false);
-    const [isEcommerce2, setIsEcommerce2] = useState(false);
-    const [isProjects2, setIsProjects2] = useState(false);
-    const [isProjects, setIsProjects] = useState(false);
-    const [isTasks, setIsTasks] = useState(false);
-    const [isCRM, setIsCRM] = useState(false);
-    const [isCrypto, setIsCrypto] = useState(false);
-    const [isInvoices, setIsInvoices] = useState(false);
-    const [isInvoices2, setIsInvoices2] = useState(false);
-    const [isSupportTickets, setIsSupportTickets] = useState(false);
-    const [isSupportTickets2, setIsSupportTickets2] = useState(false);
-    const [isNFTMarketplace, setIsNFTMarketplace] = useState(false);
-    const [isLanding, setIsLanding] = useState(false);
-    const [isJobs, setIsJobs] = useState(false);
-    const [isJobs2, setIsJobs2] = useState(false);
-    const [isJobList, setIsJobList] = useState(false);
-    const [isJobList2, setIsJobList2] = useState(false);
-    const [isCandidateList, setIsCandidateList] = useState(false);
-
-    // Authentication
-    const [isSignIn, setIsSignIn] = useState(false);
-    const [isSignUp, setIsSignUp] = useState(false);
-    const [isPasswordReset, setIsPasswordReset] = useState(false);
-    const [isPasswordCreate, setIsPasswordCreate] = useState(false);
-    const [isLockScreen, setIsLockScreen] = useState(false);
-    const [isLogout, setIsLogout] = useState(false);
-    const [isSuccessMessage, setIsSuccessMessage] = useState(false);
-    const [isVerification, setIsVerification] = useState(false);
-    const [isError, setIsError] = useState(false);
-
-    // Pages
-    const [isProfile, setIsProfile] = useState(false);
-    const [isProfile2, setIsProfile2] = useState(false);
-
-    // Charts
-    const [isApex, setIsApex] = useState(false);
-
-    // Multi Level
-    const [isLevel1, setIsLevel1] = useState(false);
-    const [isLevel2, setIsLevel2] = useState(false);
+    const obj = JSON.parse(sessionStorage.getItem("authUser")).role
+    console.log('obj   LLL', obj);
 
     const [iscurrentState, setIscurrentState] = useState('Dashboard');
 
@@ -112,6 +62,9 @@ const Navdata = () => {
         if (iscurrentState !== 'Help') {
             setIsHelp(false);
         }
+        if (iscurrentState !== 'Model') {
+            setmodel(false);
+        }
         if (iscurrentState !== 'Manage Profile') {
             setIsManageProfile(false);
         }
@@ -127,45 +80,15 @@ const Navdata = () => {
         if (iscurrentState !== 'Dashboard') {
             setIsDashboard(false);
         }
-        if (iscurrentState !== 'Apps') {
-            setIsApps(false);
-        }
-        if (iscurrentState !== 'Auth') {
-            setIsAuth(false);
-        }
-        if (iscurrentState !== 'Pages') {
-            setIsPages(false);
-        }
-        if (iscurrentState !== 'Landing') {
-            setIsLanding(false);
-        }
-        if (iscurrentState !== 'BaseUi') {
-            setIsBaseUi(false);
-        }
-        if (iscurrentState !== 'AdvanceUi') {
-            setIsAdvanceUi(false);
-        }
-        if (iscurrentState !== 'Forms') {
-            setIsForms(false);
-        }
-        if (iscurrentState !== 'Tables') {
-            setIsTables(false);
-        }
-        if (iscurrentState !== 'Charts') {
-            setIsCharts(false);
-        }
-        if (iscurrentState !== 'Icons') {
-            setIsIcons(false);
-        }
-        if (iscurrentState !== 'Maps') {
-            setIsMaps(false);
-        }
-        if (iscurrentState !== 'MuliLevel') {
-            setIsMultiLevel(false);
-        }
         if (iscurrentState === 'Widgets') {
             history("/widgets");
             document.body.classList.add('twocolumn-panel');
+        }
+        if (iscurrentState !== 'UserManagement') {
+            setIsUserManagement(false)
+        }
+        if (iscurrentState !== 'Purchase History') {
+            setPurchaseHistory(false)
         }
     }, [
         history,
@@ -177,169 +100,283 @@ const Navdata = () => {
         isMonitoringandHealth,
         isManagebilling,
         isHelp,
+        model,
         isManageprofile,
         isSettings,
         isTutorials,
         isTeamMembers,
         isDashboard,
-        isApps,
-        isAuth,
-        isPages,
-        isBaseUi,
-        isAdvanceUi,
-        isForms,
-        isTables,
-        isCharts,
-        isIcons,
-        isMaps,
-        isMultiLevel
+        UserManagement,
+        PurchaseHistory
+
+
     ]);
 
-    const menuItems = [
-        {
-            label: "Menu",
-            isHeader: true,
-        },
-        {
-            id: "dashboard2",
-            label: "Dashboards",
-            icon: "ri-dashboard-2-line",
-            link: "/dashboard",
-            stateVariables: isDashboard2,
-            click: function (e) {
-                e.preventDefault();
-                setIsDashboard2(!isDashboard2);
-                setIscurrentState('Dashboard2');
-                updateIconSidebar(e);
-            },
-        },
-        {
-            id: "project",
-            label: "Project",
-            icon: "ri-projector-line",
-            link: "/project",
-            stateVariables: isProject,
-            click: function (e) {
-                e.preventDefault();
-                setIsProject(!isProject);
-                setIscurrentState('Project');
-                updateIconSidebar(e);
-            },
-        },
-        {
-            id: "ai/mlmodels",
-            label: "AI/ML Models",
-            icon: "ri-apps-2-line",
-            link: "/models-details",
-            stateVariables: isAiMlModels,
-            click: function (e) {
-                e.preventDefault();
-                setIsAIMLModels(!isAiMlModels);
-                setIscurrentState('AI/ML Models');
-                updateIconSidebar(e);
-            },
-        },
-        {
-            id: "ai/mlnotebooks",
-            label: "Notebooks",
-            icon: "mdi mdi-notebook-edit-outline",
-            link: "/notebook",
-            stateVariables: isAiMlNotebooks,
-            click: function (e) {
-                e.preventDefault();
-                setIsAIMLNotebooks(!isAiMlNotebooks);
-                setIscurrentState('AI/ML Notebooks');
-                updateIconSidebar(e);
-            },
-        },
-        {
-            id: "managebilling",
-            label: "Manage Billing",
-            icon: "mdi mdi-progress-wrench",
-            link: "/#",
-            stateVariables: isManagebilling,
-            click: function (e) {
-                e.preventDefault();
-                setIsManageBilling(!isManagebilling);
-                setIscurrentState('Manage Billing');
-                updateIconSidebar(e);
-            },
-            subItems: [
+    const menuItems =
+        obj ?
+            [
                 {
-                    id: "paymenthistory",
-                    label: "Payment History",
-                    link: "/payment-history",
-                    parentId: "managebilling",
+                    label: "Menu",
+                    isHeader: true,
                 },
+                {
+                    id: "dashboard2",
+                    label: "Dashboards",
+                    icon: "ri-dashboard-2-line",
+                    link: "/admin/dashboard",
+                    stateVariables: isDashboard2,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsDashboard2(!isDashboard2);
+                        setIscurrentState('Dashboard2');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "UserManagement",
+                    label: "User Management",
+                    icon: " ri-team-fill",
+                    link: "/admin/Management",
+                    stateVariables: UserManagement,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsDashboard2(!UserManagement);
+                        setIscurrentState('UserManagement');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "Model",
+                    label: "AI/ML Models",
+                    icon: "fa-solid fa-robot",
+                    link: "/#",
+                    stateVariables: model,
+                    click: function (e) {
+                        e.preventDefault();
+                        setmodel(!model);
+                        setIscurrentState('Model');
+                        updateIconSidebar(e);
+                    },
+                    subItems: [
+                        {
+                            id: "supportticket",
+                            label: "Model Category",
+                            link: "/admin/ModelsCategory",
+                            parentId: "Model",
+                        },
+                        {
+                            id: "faqs",
+                            label: "AI Models",
+                            link: "/admin/AImodel",
+                            parentId: "Model",
+                        },
+                    ]
+                },
+                {
+                    id: "help",
+                    label: "Help",
+                    icon: "las la-question-circle",
+                    link: "/#",
+                    stateVariables: isHelp,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsHelp(!isHelp);
+                        setIscurrentState('Help');
+                        updateIconSidebar(e);
+                    },
+                    subItems: [
+                        {
+                            id: "supportticket",
+                            label: "Support Ticket",
+                            link: "/admin/supportticket",
+                            parentId: "help",
+                        },
+                        {
+                            id: "faqs",
+                            label: "FAQs",
+                            icon: " las la-question-circle",
+                            link: "/admin/FAQs",
+                            parentId: "help",
+                        },
+                    ]
+                },
+               
+                {
+                    id: "UserManagement",
+                    label: "Tutorials",
+                    icon: " ri-video-line",
+                    link: "/admin/Tutorials",
+                    stateVariables: UserManagement,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsDashboard2(!UserManagement);
+                        setIscurrentState('UserManagement');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "PurchaseHistory",
+                    label: "Purchase History",
+                    icon: "ri-bank-card-line",
+                    link: "/admin/PurchaseHistory",
+                    stateVariables: PurchaseHistory,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsDashboard2(!PurchaseHistory);
+                        setIscurrentState('PurchaseHistory');
+                        updateIconSidebar(e);
+                    },
+                },
+
+
             ]
-        },
-        {
-            id: "help",
-            label: "Help",
-            icon: "bx bx-help-circle",
-            link: "/#",
-            stateVariables: isHelp,
-            click: function (e) {
-                e.preventDefault();
-                setIsHelp(!isHelp);
-                setIscurrentState('Help');
-                updateIconSidebar(e);
-            },
-            subItems: [
+            :
+
+            [
                 {
-                    id: "supportticket",
-                    label: "Support Ticket",
-                    link: "/apps-supoort-ticket",
-                    parentId: "help",
+                    label: "Menu",
+                    isHeader: true,
                 },
                 {
-                    id: "faqs",
-                    label: "FAQs",
-                    link: "/faqs",
-                    parentId: "help",
+                    id: "dashboard2",
+                    label: "Dashboards",
+                    icon: "ri-dashboard-2-line",
+                    link: "/dashboard",
+                    stateVariables: isDashboard2,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsDashboard2(!isDashboard2);
+                        setIscurrentState('Dashboard2');
+                        updateIconSidebar(e);
+                    },
                 },
-            ]
-        },
-        {
-            id: "manageprofile",
-            label: "Manage Profile",
-            icon: " ri-profile-line",
-            link: "/pages-manage-profile",
-            stateVariables: isManageprofile,
-            click: function (e) {
-                e.preventDefault();
-                setIsManageProfile(!isManageprofile);
-                setIscurrentState('Manage Profile');
-                updateIconSidebar(e);
-            },
-        },
-        {
-            id: "tutorials",
-            label: "Tutorials",
-            icon: "ri-video-line",
-            link: "/tutorial",
-            stateVariables: isTutorials,
-            click: function (e) {
-                e.preventDefault();
-                setIsTutorials(!isTutorials);
-                setIscurrentState('Tutorials');
-                updateIconSidebar(e);
-            },
-        },
-        {
-            id: "teammembers",
-            label: "Team Members",
-            icon: " ri-team-line",
-            link: "/team-members",
-            stateVariables: isTeamMembers,
-            click: function (e) {
-                e.preventDefault();
-                setIsTeamMembers(!isTeamMembers);
-                setIscurrentState('Team Members');
-                updateIconSidebar(e);
-            },
-        },
-    ];
+                {
+                    id: "project",
+                    label: "Project",
+                    icon: "ri-projector-line",
+                    link: "/project",
+                    stateVariables: isProject,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsProject(!isProject);
+                        setIscurrentState('Project');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "ai/mlmodels",
+                    label: "AI/ML Models",
+                    icon: "ri-apps-2-line",
+                    link: "/models-details",
+                    stateVariables: isAiMlModels,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsAIMLModels(!isAiMlModels);
+                        setIscurrentState('AI/ML Models');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "ai/mlnotebooks",
+                    label: "Notebooks",
+                    icon: "mdi mdi-notebook-edit-outline",
+                    link: "/notebook",
+                    stateVariables: isAiMlNotebooks,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsAIMLNotebooks(!isAiMlNotebooks);
+                        setIscurrentState('AI/ML Notebooks');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "managebilling",
+                    label: "Manage Billing",
+                    icon: "mdi mdi-progress-wrench",
+                    link: "/#",
+                    stateVariables: isManagebilling,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsManageBilling(!isManagebilling);
+                        setIscurrentState('Manage Billing');
+                        updateIconSidebar(e);
+                    },
+                    subItems: [
+                        {
+                            id: "paymenthistory",
+                            label: "Payment History",
+                            link: "/payment-history",
+                            parentId: "managebilling",
+                        },
+                    ]
+                },
+                {
+                    id: "help",
+                    label: "Help",
+                    icon: "bx bx-help-circle",
+                    link: "/#",
+                    stateVariables: isHelp,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsHelp(!isHelp);
+                        setIscurrentState('Help');
+                        updateIconSidebar(e);
+                    },
+                    subItems: [
+                        {
+                            id: "supportticket",
+                            label: "Support Ticket",
+                            link: "/apps-supoort-ticket",
+                            parentId: "help",
+                        },
+                        {
+                            id: "faqs",
+                            label: "FAQs",
+                            link: "/faqs",
+                            parentId: "help",
+                        },
+                    ]
+                },
+                {
+                    id: "manageprofile",
+                    label: "Manage Profile",
+                    icon: " ri-profile-line",
+                    link: "/pages-manage-profile",
+                    stateVariables: isManageprofile,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsManageProfile(!isManageprofile);
+                        setIscurrentState('Manage Profile');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "tutorials",
+                    label: "Tutorials",
+                    icon: "ri-video-line",
+                    link: "/tutorial",
+                    stateVariables: isTutorials,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsTutorials(!isTutorials);
+                        setIscurrentState('Tutorials');
+                        updateIconSidebar(e);
+                    },
+                },
+                {
+                    id: "teammembers",
+                    label: "Team Members",
+                    icon: " ri-team-line",
+                    link: "/team-members",
+                    stateVariables: isTeamMembers,
+                    click: function (e) {
+                        e.preventDefault();
+                        setIsTeamMembers(!isTeamMembers);
+                        setIscurrentState('Team Members');
+                        updateIconSidebar(e);
+                    },
+                },
+            ];
     return <React.Fragment>{menuItems}</React.Fragment>;
 };
 export default Navdata;

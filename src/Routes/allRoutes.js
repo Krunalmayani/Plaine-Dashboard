@@ -7,6 +7,10 @@ import DashboardEcommerce from "../pages/DashboardEcommerce";
 
 
 import Dashboard from "../pages/Dashboard";
+import AdminDashboard from "../pages/Admin/AdminDashboard/index";
+import UserManagement from "../pages/Admin/UserManagement/index";
+import PurchaseHistorys from "../pages/Admin/PurchaseHistory/index";
+import Supporttickets from "../pages/Admin/SupportTicket/index";
 
 
 
@@ -40,6 +44,7 @@ import BasicPasswReset from '../pages/AuthenticationInner/PasswordReset/BasicPas
 //pages
 import Starter from '../pages/Pages/Starter/Starter';
 import SimplePage from '../pages/Pages/Profile/SimplePage/SimplePage';
+import SimplePages from '../pages/Admin/UserManagement/SimplePage';
 import Settings from '../pages/Pages/Profile/Settings/Settings';
 import Team from '../pages/Pages/Team/Team';
 import TeamMembers from '../pages/TeamMembers/TeamMembers';
@@ -70,9 +75,12 @@ import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
 //login
 import Login from "../pages/Authentication/Login";
+import AdminLogin from "../pages/Admin/AdminAuthentication/Login";
+import ForgetPasswordPageadmin from "../pages/Admin/AdminAuthentication/ForgetPassword";
 import ForgetPasswordPage from "../pages/Authentication/ForgetPassword";
 import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
+import AdminRegister from "../pages/Admin/AdminAuthentication/Register";
 
 
 
@@ -99,11 +107,34 @@ import PaymentDetails from "../pages/ManageBilling/PaymentDetails";
 import InvoiceList from "../pages/Invoices/InvoiceList";
 import InvoiceCreate from "../pages/Invoices/InvoiceCreate";
 import InvoiceDetails from "../pages/Invoices/InvoiceDetails"
+import ModelsCatlog from "../pages/Admin/AiMl-Models/modelcatlog/ModelsCatlog";
+import AImodel from "../pages/Admin/AiMl-Models/AI model/AImodel";
+import AImodelForm from "../pages/Admin/AiMl-Models/AI model/AlmodelForm";
+import FAQs from "../pages/Admin/FAQS/FAQs";
+import Tutorials from "../pages/Admin/Tutorials/Tutorials";
+import ChangePassword from "../pages/Admin/AdminAuthentication/ChangePassword";
+import VideoLink from "../pages/Admin/Tutorials/VideoLink";
 
 const authProtectedRoutes = [
   { path: "/aiml-models", component: <Models /> },
   { path: "/models-details", component: <ModelsDetails /> },
   { path: "/dashboard", component: <Dashboard /> },
+  { path: "/admin/dashboard", component: <AdminDashboard /> },
+  { path: "/admin/Management", component: <UserManagement /> },
+  { path: "/admin/ModelsCategory", component: <ModelsCatlog /> },
+  { path: "/admin/AImodel", component: <AImodel /> },
+  { path: "/admin/AddNewModel", component: <AImodelForm /> },
+  { path: "/admin/FAQs", component: <FAQs /> },
+  { path: "/admin/Tutorials", component: <Tutorials /> },
+  { path: "/admin/PurchaseHistory", component: <PurchaseHistorys /> },
+  { path: "/admin/supportticket", component: <Supporttickets /> },
+  { path: "/admin/UserProfile", component: <SimplePages /> },
+  { path: "/admin/ChangePassword", component: <ChangePassword /> },
+  { path: "/admin/Video", component: <VideoLink /> },
+
+
+
+
   // { path: "/dashboard", component: <DashboardEcommerce /> },
   { path: "/index", component: <DashboardEcommerce /> },
 
@@ -118,7 +149,7 @@ const authProtectedRoutes = [
   { path: "/notebook-overview", component: <NotebookOverview /> },
   { path: "/project-overview", component: <MainProjectOverview /> },
 
- 
+
   //Supports Tickets
   { path: "/apps-tickets-details", component: <TicketsDetails /> },
   { path: "/apps-supoort-ticket", component: <ListSupportTicket /> },
@@ -129,7 +160,7 @@ const authProtectedRoutes = [
   { path: "/apps-invoices-details", component: <InvoiceDetails /> },
   { path: "/apps-invoices-create", component: <InvoiceCreate /> },
   { path: '/team-members', component: <TeamMembers /> },
-  
+
   //Pages
   { path: "/pages-starter", component: <Starter /> },
   { path: "/pages-profile", component: <SimplePage /> },
@@ -165,8 +196,11 @@ const publicRoutes = [
   // Authentication Page
   { path: "/logout", component: <Logout /> },
   { path: "/login", component: <Login /> },
+  { path: "/admin", component: <AdminLogin /> },
+  { path: "/admin-forgot-password", component: <ForgetPasswordPageadmin /> },
   { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
+  { path: "/admin-register", component: <AdminRegister /> },
 
   //AuthenticationInner pages
   { path: "/auth-signin-basic", component: <BasicSignIn /> },

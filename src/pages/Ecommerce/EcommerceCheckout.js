@@ -167,7 +167,7 @@ const EcommerceCheckout = () => {
                             className="form-control"
                             id="cc-name"
                             placeholder="Enter name"
-                            style={{ width: "50%" ,marginBottom: "15px"}}
+                            style={{ width: "50%", marginBottom: "15px" }}
                           />
                           <Row>
                             <Label htmlFor="country" className="form-label">

@@ -7,6 +7,9 @@ import avatar1 from "../../assets/images/users/avatar-1.jpg";
 
 const ProfileDropdown = () => {
 
+    const obj = JSON.parse(sessionStorage.getItem("authUser")).role
+    console.log('obj   LLL', obj);
+
     const { user } = useSelector(state => ({
         user: state.Profile.user,
     }));
@@ -34,28 +37,53 @@ const ProfileDropdown = () => {
                     <span className="d-flex align-items-center">
                         <img className="rounded-circle header-profile-user" src={avatar1}
                             alt="Header Avatar" />
-                        <span className="text-start ms-xl-2">
-                            <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Vishal</span>
-                            <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Savaliya</span>
-                        </span>
+                        {
+                            obj ?
+                                <span className="text-start ms-xl-2">
+                                    <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Admin</span>
+                                    {/* <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">themesbrand</span> */}
+                                </span>
+                                :
+                                <span className="text-start ms-xl-2">
+                                    <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Vishal</span>
+                                    <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Savaliya</span>
+                                </span>
+                        }
+                       
                     </span>
                 </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-end">
-                    <h6 className="dropdown-header">Welcome Vishal!</h6>
-                    <DropdownItem href={process.env.PUBLIC_URL + "/profile"}><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
-                        <span className="align-middle">Profile</span></DropdownItem>
-                    <DropdownItem href={process.env.PUBLIC_URL + "/pages-faqs"}><i
-                        className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
-                            className="align-middle">Help</span></DropdownItem>
-                    <div className="dropdown-divider"></div>
-                    <DropdownItem href={process.env.PUBLIC_URL + "/pages-profile-settings"}><span
-                        className="badge bg-soft-success text-success mt-1 float-end">New</span><i
-                            className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
-                                className="align-middle">Settings</span></DropdownItem>
-                    <DropdownItem href={process.env.PUBLIC_URL + "/logout"}><i
-                        className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
-                            className="align-middle" data-key="t-logout">Logout</span></DropdownItem>
-                </DropdownMenu>
+
+                {
+                    obj ?
+                        <DropdownMenu className="dropdown-menu-end">
+                            <h6 className="dropdown-header">Welcome Vishal!</h6>
+                            <DropdownItem href={process.env.PUBLIC_URL + "/admin/ChangePassword"}><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                <span className="align-middle">Change Password</span></DropdownItem>
+
+
+                            <DropdownItem href={process.env.PUBLIC_URL + "/logout"}><i
+                                className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
+                                    className="align-middle" data-key="t-logout">Logout</span></DropdownItem>
+                        </DropdownMenu>
+                        :
+                        <DropdownMenu className="dropdown-menu-end">
+                            <h6 className="dropdown-header">Welcome Vishal!</h6>
+                            <DropdownItem href={process.env.PUBLIC_URL + "/profile"}><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                <span className="align-middle">Profile</span></DropdownItem>
+                            <DropdownItem href={process.env.PUBLIC_URL + "/pages-faqs"}><i
+                                className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
+                                    className="align-middle">Help</span></DropdownItem>
+                            <div className="dropdown-divider"></div>
+                            <DropdownItem href={process.env.PUBLIC_URL + "/pages-profile-settings"}><span
+                                className="badge bg-soft-success text-success mt-1 float-end">New</span><i
+                                    className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
+                                        className="align-middle">Settings</span></DropdownItem>
+                            <DropdownItem href={process.env.PUBLIC_URL + "/logout"}><i
+                                className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
+                                    className="align-middle" data-key="t-logout">Logout</span></DropdownItem>
+                        </DropdownMenu>
+                }
+
             </Dropdown>
         </React.Fragment>
     );

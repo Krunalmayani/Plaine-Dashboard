@@ -17,6 +17,69 @@ import avatar3 from "../../assets/images/users/avatar-3.jpg";
 import avatar4 from "../../assets/images/users/avatar-4.jpg";
 import avatar6 from "../../assets/images/users/avatar-6.jpg";
 
+const adminWidgets = [
+    {
+        id: 1,
+        cardColor: "primary",
+        label: "No. of Users",
+        badge: "ri-arrow-right-up-line",
+        badgeClass: "white",
+        percentage: "+16.24",
+        counter: "559525",
+        link: "View All Users",
+        bgcolor: "light",
+        separator: ",",
+        icon: "fa-solid fa-user",
+        decimals: 0,
+       
+     
+    },
+    {
+        id: 2,
+        cardColor: "secondary",
+        label: "Model Deployments",
+        badge: "ri-arrow-right-down-line",
+        badgeClass: "white",
+        percentage: "-3.57",
+        counter: "36894",
+        link: "View All Deployments",
+        bgcolor: "info",
+        icon: "fa-solid fa-robot",
+        decimals: 0,
+       
+        separator: ",",
+        suffix: ""
+    },
+    {
+        id: 3,
+        cardColor: "success",
+        label: "Revenue",
+        badge: "ri-arrow-right-up-line",
+        badgeClass: "white",
+        percentage: "+29.08",
+        counter: "185.53",
+        link: "View Revenue",
+        bgcolor: "warning",
+        icon: "fa-solid fa-dollar-sign",
+        prefix: "$",
+        decimals: 2,
+        separator: ",",
+    },
+    {
+        id: 4,
+        cardColor: "info",
+        label: "No. Model Available",
+        badgeClass: "white",
+        percentage: "+0.00",
+        counter: "165589",
+        link: "View All Available",
+        bgcolor: "primary",
+        icon: "fa-solid fa-table-list",
+        decimals: 0,
+        separator: ",",
+       
+    },
+];
 const ecomWidgets = [
     {
         id: 1,
@@ -391,4 +454,4 @@ const yearRevenueData = [
     },
 ];
 
-export { ecomWidgets, bestSellingProducts, topSellers, recentOrders, topCategories, allRevenueData, monthRevenueData, halfYearRevenueData, yearRevenueData };
+export { ecomWidgets,adminWidgets, bestSellingProducts, topSellers, recentOrders, topCategories, allRevenueData, monthRevenueData, halfYearRevenueData, yearRevenueData };

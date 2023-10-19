@@ -9,6 +9,7 @@ import {
 } from "./dashboardcrm";
 import {
   ecomWidgets,
+  adminWidgets,
   bestSellingProducts,
   topSellers,
   recentOrders,
@@ -54,7 +55,7 @@ import { calenderDefaultCategories, events, defaultevent } from "./calender";
 import { direactContact, channelsList, messages, chatContactData } from "./chat";
 import { mailbox } from "./mailbox";
 import { transactions, buysellWidgets, market, CryptoOrders, watchlist, marketStatus, CryptoicoWidgets, icoWidgetsList } from "./cryptoPage";
-import { ticketsWidgets, ticketsTable } from "./supportTickets";
+import { ticketsWidgets, ticketsTable ,ticketsAdminTable } from "./supportTickets";
 
 // Pages
 import { gallery, pricing1, pricing2, pricing3, projects, document, SearchGallery, news, video, swiper, team } from "./pagesData";
@@ -90,6 +91,11 @@ import { todoTaskList, todoCollapse } from "./todoData";
 
 import { jobApplication } from "./appsJobs";
 import { apiKey } from "./apiKey";
+import { modelscatlog } from "./modelscatlog";
+import { models } from "./models";
+import { FAQsData } from "./faqsData";
+import { Tutorial } from "./Tutorial";
+import { purchaseHistorysList } from "./purchaseHistorysList";
 
 export {
   topPages,
@@ -176,5 +182,5 @@ export {
   popularCreatorsNFT, marketPlacewidget,
   connectData, discoverItemsData, featuresData, productData, topCreatorData, allData, monthData, halfyearData, allaudiencesMetricsData, monthaudiencesMetricsData, halfyearaudiencesMetricsData, yaeraudiencesMetricsData, todayDeviceData, lastWeekDeviceData, lastMonthDeviceData, currentYearDeviceData, todayBalanceData, lastWeekBalanceData, lastMonthBalanceData, currentYearBalanceData, todayDealData, weeklyDealData, monthlyDealData, yealyDealData, octData, novData, decData, janData, allRevenueData, monthRevenueData, halfYearRevenueData, yearRevenueData, btcPortfolioData, usdPortfolioData, euroPortfolioData, MarketGraphAll, MarketGraphYear, MarketGraphMonth, MarketGraphWeek, MarketGraphHour, allProjectData, monthProjectData, halfyearProjectData, yearProjectData, allTimeData, lastWeekData, lastMonthData, lastquarterData, allMarketplaceData, monthMarketplaceData, halfyearMarketplaceData, yearMarketplaceData, todayaudiencesCountryData, lastWeekaudiencesCountryData, lastMonthaudiencesCountryData, currentyearaudiencesCountryData, dashboardChat, gallery, pricing1, pricing2, pricing3, projects, document, SearchGallery, news, video, swiper, team,
   recentFile, folderList, todoTaskList, chatContactData, todoCollapse, jobApplication,
-  apiKey, crmcontactsNew
+  apiKey, crmcontactsNew,modelscatlog,models,FAQsData,Tutorial,purchaseHistorysList,ticketsAdminTable
 };

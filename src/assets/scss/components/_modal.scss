@@ -5,6 +5,9 @@
 .modal-title {
     font-weight: $font-weight-semibold;
 }
+.modal-footer{
+	margin-top: 10px ;
+}
 
 .modal-dialog:not(.modal-dialog-scrollable) {
     .modal-header {

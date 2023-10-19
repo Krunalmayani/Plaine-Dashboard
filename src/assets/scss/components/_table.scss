@@ -139,3 +139,7 @@ $value in $theme-colors {
         fill: rgba(var(--#{$variable-prefix}dark-rgb), 0.25);
     }
 }
+
+.padding-Almodel-finish{
+    padding-top: 0.12rem !important;
+}

@@ -59,7 +59,7 @@ const Description = () => {
                                 <div className="pt-3 border-top border-top-dashed mt-4">
                                     <h6 className="mb-3 fw-bold text-uppercase">Resources</h6>
                                     <Row className="g-3">
-                                        <Col xxl={4} lg={4}>
+                                        <Col xxl={6} lg={6}>
                                             <a className='pe-4' target="_blank" href='https://jupyter.org/try-jupyter/retro/notebooks/?path=notebooks/Intro.ipynb'>
                                                 <Button color="primary"> Launch Demo </Button>
                                             </a>
@@ -67,16 +67,12 @@ const Description = () => {
                                                 <Button color="primary"> Launch App </Button>
                                             </a>
                                         </Col>
-                                        <Col xxl={4} lg={4}>
+                                        <Col xxl={6} lg={6}>
                                             <a target="_blank" href='https://docs.jupyter.org/en/latest/'>
                                                 <Button color="secondary"> Documents </Button>
                                             </a>
                                         </Col>
-                                        <Col xxl={4} lg={4}>
-                                            <a href='/apps-ecommerce-checkout'>
-                                                <Button color="success"> Deploy </Button>
-                                            </a>
-                                        </Col>
+                                       
                                     </Row>
                                 </div>
                             </div>

@@ -37,6 +37,7 @@ function GlobalFilter({
   isCompaniesFilter,
   isCryptoOrdersFilter,
   isInvoiceListFilter,
+  statusFilter,
   isTicketsListFilter,
   isNFTRankingFilter,
   isTaskListFilter,
@@ -93,7 +94,7 @@ function GlobalFilter({
               <CryptoOrdersGlobalFilter />
             )}
             {isInvoiceListFilter && (
-              <InvoiceListGlobalSearch />
+              <InvoiceListGlobalSearch statusFilter={statusFilter} />
             )}
             {isTicketsListFilter && (
               <TicketsListGlobalFilter />
@@ -126,6 +127,7 @@ const TableContainer = ({
   isLeadsFilter,
   isCryptoOrdersFilter,
   isInvoiceListFilter,
+  statusFilter,
   isTicketsListFilter,
   isNFTRankingFilter,
   isTaskListFilter,
@@ -224,6 +226,7 @@ const TableContainer = ({
             isLeadsFilter={isLeadsFilter}
             isCryptoOrdersFilter={isCryptoOrdersFilter}
             isInvoiceListFilter={isInvoiceListFilter}
+            statusFilter={statusFilter}
             isTicketsListFilter={isTicketsListFilter}
             isNFTRankingFilter={isNFTRankingFilter}
             isTaskListFilter={isTaskListFilter}
@@ -284,7 +287,7 @@ const TableContainer = ({
             {headerGroups.map((headerGroup) => (
               <tr className={trClass} key={headerGroup.id}  {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <th key={column.id} className={thClass} {...column.getSortByToggleProps()}>
+                  <th  key={column.id} className={thClass} {...column.getSortByToggleProps()}>
                     {column.render("Header")}
                     {generateSortingIndicator(column)}
                     {/* <Filter column={column} /> */}

@@ -90,7 +90,7 @@ const Login = (props) => {
                                 <div className="text-center mt-sm-5 mb-4 text-white-50">
                                     <div>
                                         <Link to="/" className="d-inline-block auth-logo">
-                                            <img src={logoLight} alt=""/>
+                                            <img src={logoLight} alt="" height='50px'/>
                                         </Link>
                                     </div>
                                     <p className="mt-3 fs-15 fw-medium">Unlock the Power of AI with Plaine. Explore a wide range of AI and ML models, deploy with ease, and transform your business with innovative solutions.</p>
@@ -171,35 +171,7 @@ const Login = (props) => {
                                                     </Button>
                                                 </div>
 
-                                                <div className="mt-4 text-center">
-                                                    <div className="signin-other-title">
-                                                        <h5 className="fs-13 mb-4 title">Sign In with</h5>
-                                                    </div>
-                                                    <div>
-                                                        <Link
-                                                            to="#"
-                                                            className="btn btn-primary btn-icon me-1"
-                                                            onClick={e => {
-                                                                e.preventDefault();
-                                                                socialResponse("facebook");
-                                                            }}
-                                                            >
-                                                            <i className="ri-facebook-fill fs-16" />
-                                                        </Link>
-                                                        <Link
-                                                            to="#"
-                                                            className="btn btn-danger btn-icon me-1"
-                                                            onClick={e => {
-                                                                e.preventDefault();
-                                                                socialResponse("google");
-                                                            }}
-                                                            >
-                                                            <i className="ri-google-fill fs-16" />
-                                                        </Link>
-                                                        <Button color="dark" className="btn-icon"><i className="ri-github-fill fs-16"></i></Button>{" "}
-                                                        <Button color="info" className="btn-icon"><i className="ri-twitter-fill fs-16"></i></Button>
-                                                    </div>
-                                                </div>
+                                                
                                             </Form>
                                         </div>
                                     </CardBody>

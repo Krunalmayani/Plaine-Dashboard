@@ -310,23 +310,25 @@ const CryptoOrdersGlobalFilter = () => {
     );
 };
 
-const InvoiceListGlobalSearch = () => {
+const InvoiceListGlobalSearch = ({
+    statusFilter
+}) => {
     const [isStatus, setisStatus] = useState(null);
 
 
     function handleisStatus(isStatus) {
+
+        statusFilter(isStatus)
         setisStatus(isStatus);
     }
+
 
     const allstatus = [
         {
             options: [
-                { label: "Status", value: "Status" },
-                { label: "All", value: "All" },
-                { label: "Unpaid", value: "Unpaid" },
-                { label: "Paid", value: "Paid" },
-                { label: "Cancel", value: "Cancel" },
-                { label: "Refund", value: "Refund" },
+                { label: "ACTIVE", value: "Active" },
+                { label: "DEACTIVE", value: "DeActive" },
+                
             ],
         },
     ];
@@ -345,20 +347,24 @@ const InvoiceListGlobalSearch = () => {
                     }}
                 />
             </Col>
-
-            <Col sm={4} xxl={3}>
+            {
+                statusFilter ? 
+                    <Col sm={4} xxl={3}>
                 <div className="input-light">
                     <Select
                         value={isStatus}
-                        onChange={() => {
-                            handleisStatus();
+                        onChange={(val) => {
+                            handleisStatus(val.value);
                         }}
                         options={allstatus}
                         name="choices-single-default"
                         id="idStatus"
                     ></Select>
                 </div>
-            </Col>
+                    </Col> :
+                    ' ' 
+            }
+         
 
             <Col sm={4} xxl={1}>
                 <Button color="primary" className="w-100">

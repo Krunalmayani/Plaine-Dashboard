@@ -18,12 +18,15 @@ export const isUserAuthenticated = () => {
 
 // Register Method
 export const postFakeRegister = data => api.create(url.POST_FAKE_REGISTER, data);
+export const adminpostFakeRegister = data => api.create(url.POST_FAKE_REGISTER, data);
 
 // Login Method
 export const postFakeLogin = data => api.create(url.POST_FAKE_LOGIN, data);
+export const postFakeadminlogin = data => api.create(url.POST_FAKE_ADMINLOGIN, data);
 
 // postForgetPwd
 export const postFakeForgetPwd = data => api.create(url.POST_FAKE_PASSWORD_FORGET, data);
+export const adminFakeForgetPwd = data => api.create(url.ADMIN_FAKE_PASSWORD_FORGET, data);
 
 // Edit profile
 export const postJwtProfile = data => api.create(url.POST_EDIT_JWT_PROFILE, data);
@@ -57,6 +60,7 @@ export const postJwtRegister = (url, data) => {
 
 // Login Method
 export const postJwtLogin = data => api.create(url.POST_FAKE_JWT_LOGIN, data);
+export const postJwtadminLogin = data => api.create(url.POST_FAKE_JWT_ADMINLOGIN, data);
 
 // postForgetPwd
 export const postJwtForgetPwd = data => api.create(url.POST_FAKE_JWT_PASSWORD_FORGET, data);
@@ -362,3 +366,11 @@ export const getJobApplicationList = () => api.get(url.GET_APPLICATION_LIST);
 
 //API Key
 export const getAPIKey = () => api.get(url.GET_API_KEY);
+
+
+
+export const getModelscatlog = () => api.get(url.GET_MODELS_CATLOG);
+
+
+
+

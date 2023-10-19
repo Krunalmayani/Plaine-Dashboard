@@ -350,7 +350,7 @@ const TeamMembers = () => {
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-end">
                     <DropdownItem className="dropdown-item" href="#"
-                      onClick={() => { const contactData = cellProps.row.original; setInfo(contactData); }}
+                      // onClick={() => { const contactData = cellProps.row.original; setInfo(contactData); }}
                     >
                       <i className="ri-eye-fill align-bottom me-2 text-muted"></i>{" "}
                       View
